@@ -18,7 +18,7 @@
 
 extern int updateCatName( const int index, const char newName[] );
 extern int fixCat( const int index );
-extern int updateCatWeight( const int index, const float newWeight );
+extern int updateCatWeight( const int index, const Weight newWeight );
 extern int updateCatCollar1( const int index, const int collar1 );
 extern int updateCatCollar2( const int index, const int collar2 );
 extern int updateLicense( const int index, const unsigned long long licenseNumber );

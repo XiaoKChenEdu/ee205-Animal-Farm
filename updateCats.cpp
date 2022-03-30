@@ -65,7 +65,7 @@ int fixCat( const int index ) {
 }
 
 //Update catWeight
-int updateCatWeight( const int index, const float newWeight ) {
+int updateCatWeight( const int index, const Weight newWeight ) {
 
 	//Check if enter index is out of bound.
     if ( index < 0 || index > (currentCatListSize - 1) || index > MAX_CAT - 1 ) {

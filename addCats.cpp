@@ -13,7 +13,7 @@
 #include "addCats.h"
 
 
-int addCat( const char name[], const int gender, const int breed, const bool isFixed, const float weight, const int collar1, const int collar2, const unsigned long long license ) {
+int addCat( const char name[], const int gender, const int breed, const bool isFixed, const Weight weight, const int collar1, const int collar2, const unsigned long long license ) {
     
     //Check if CatListSize is not larger than MAX_CAT.
     if ( currentCatListSize > MAX_CAT - 1 ) {

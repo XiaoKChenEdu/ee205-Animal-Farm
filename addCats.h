@@ -22,7 +22,7 @@ extern int addCat(
         const int                gender,
         const int                breed,
         const bool               isFixed,
-        const float              weight,
+        const Weight             weight,
         const int                collar1,
         const int                collar2,
         const unsigned long long license

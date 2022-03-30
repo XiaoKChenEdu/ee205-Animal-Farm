@@ -13,5 +13,5 @@
 #include "catDatabase.h"
 
 
-int currentCatListSize;
+NumCats currentCatListSize;
 struct catMetaData cat[MAX_CAT - 1];
