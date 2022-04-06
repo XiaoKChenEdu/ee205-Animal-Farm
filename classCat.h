@@ -34,7 +34,7 @@ class classCat {
     public:
         void createCat();
 
-        void createCat( const char*              newCatName,
+        void createCat( const char*              pNewCatName,
                         const Gender             newCatGender,
                         const Breed              newCatBreed,
                         const Weight             newCatWeight
@@ -45,27 +45,27 @@ class classCat {
 
     public:
         ////// Getters //////
-        char*  getName();
-        Gender getGender();
-        Breed  getBreed();
-        bool   getIsFixed();
-        Weight getWeight();
+        char*  getName    ();
+        Gender getGender  ();
+        Breed  getBreed   ();
+        bool   getIsFixed ();
+        Weight getWeight  ();
 
         ////// Setters //////
-        void setName    ( const char* newName );
-        void setGender  ( Gender newGender );
-        void setBreed   ( Breed newBreed );
+        void setName    ( const char* pNewName  );
+        void setGender  ( Gender      newGender );
+        void setBreed   ( Breed       newBreed  );
         void setIsFixed ();
-        void setWeight  ( Weight newWeight );
+        void setWeight  ( Weight      newWeight );
 
     public:
         bool print();
 
     public:
         bool validate();
-        bool validateCatName   ( const char* newName );
+        bool validateCatName   ( const char*  pNewName  );
         bool validateCatGender ( const Gender newGender );
-        bool validateCatBreed ( const Breed newBreed );
+        bool validateCatBreed  ( const Breed  newBreed  );
         bool validateCatWeight ( const Weight newWeight );
 
 };

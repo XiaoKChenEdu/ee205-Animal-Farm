@@ -23,11 +23,11 @@ void classCat::createCat() {
 
 }
 
-void classCat::createCat(const char *newCatName, const Gender newCatGender, const Breed newCatBreed, const Weight newCatWeight) {
+void classCat::createCat(const char* pNewCatName, const Gender newCatGender, const Breed newCatBreed, const Weight newCatWeight) {
 
-    setName   ( newCatName );
-    setGender ( newCatGender);
-    setBreed  (newCatBreed );
+    setName   (pNewCatName   );
+    setGender ( newCatGender );
+    setBreed  (newCatBreed    );
     setWeight ( newCatWeight );
 
     assert( validate() );
@@ -69,15 +69,15 @@ Weight classCat::getWeight() {
 
 
 ///////////////////////// Setter Starts Here ///////////////////////
-void classCat::setName(const char *newName) {
+void classCat::setName( const char* pNewName ) {
 
-    validateCatName ( newName );
+    validateCatName ( pNewName );
     memset          ( catName, 0, MAX_CHAR_CAT_NAME );
-    strcpy          ( catName, newName );
+    strcpy          (catName, pNewName );
 
 }
 
-void classCat::setGender(Gender newGender) {
+void classCat::setGender( Gender newGender ) {
 
     if ( catGender != UNKNOWN_GENDER ) {
 
@@ -90,7 +90,7 @@ void classCat::setGender(Gender newGender) {
 
 }
 
-void classCat::setBreed(Breed newBreed) {
+void classCat::setBreed( Breed newBreed ) {
 
     if ( catBreed != UNKNOWN_BREED ) {
 
@@ -109,7 +109,7 @@ void classCat::setIsFixed() {
 
 }
 
-void classCat::setWeight(Weight newWeight) {
+void classCat::setWeight( Weight newWeight ) {
 
     validateCatWeight( newWeight );
     classCat::catWeight = newWeight;
@@ -132,11 +132,11 @@ bool classCat::print() {
     cout << left ;
     cout << boolalpha ;
 
-    FORMAT_LINE( "Cat", "name" )         << getName()   << endl ;
-    FORMAT_LINE( "Cat", "gender" )       << toString( 0, getGender() ) << endl ;
-    FORMAT_LINE( "Cat", "breed" )        << toString( 1, getBreed() )   << endl ;
+    FORMAT_LINE( "Cat", "name"    )      << getName()   << endl ;
+    FORMAT_LINE( "Cat", "gender"  )      << toString( 0, getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "breed"   )      << toString( 1, getBreed() )   << endl ;
     FORMAT_LINE( "Cat", "isFixed" )      << getIsFixed()   << endl ;
-    FORMAT_LINE( "Cat", "weight" )       << getWeight() << endl ;
+    FORMAT_LINE( "Cat", "weight"  )      << getWeight() << endl ;
 
     return true ;
 
@@ -147,10 +147,11 @@ bool classCat::validate() {
 
     try {
 
-        validateCatName   ( catName );
+        validateCatName   ( catName   );
         validateCatGender ( catGender );
-        validateCatBreed  ( catBreed );
+        validateCatBreed  ( catBreed   );
         validateCatWeight ( catWeight );
+
     } catch ( exception const& validationError ) {
 
         cout << validationError.what() << endl;
@@ -162,21 +163,21 @@ bool classCat::validate() {
 
 }
 
-bool classCat::validateCatName(const char *newName) {
+bool classCat::validateCatName( const char* pNewName ) {
 
-    if ( newName == nullptr ) {
+    if (pNewName == nullptr ) {
 
         throw invalid_argument( "catName must not be NULL" );
 
     }
 
-    if ( strlen( newName ) <= 0 ) {
+    if (strlen(pNewName ) <= 0 ) {
 
         throw length_error( "catName length must be > 0" );
 
     }
 
-    if ( strlen ( newName ) >= MAX_CHAR_CAT_NAME ) {
+    if (strlen (pNewName ) >= MAX_CHAR_CAT_NAME ) {
 
         throw length_error(  "catName length must be < MAX_CHAR_CAT_NAME" );
 
@@ -186,7 +187,7 @@ bool classCat::validateCatName(const char *newName) {
 
 }
 
-bool classCat::validateCatGender(const Gender newGender) {
+bool classCat::validateCatGender( const Gender newGender ) {
 
     if ( newGender == UNKNOWN_GENDER ) {
 
@@ -198,7 +199,7 @@ bool classCat::validateCatGender(const Gender newGender) {
 
 }
 
-bool classCat::validateCatBreed(const Breed newBreed) {
+bool classCat::validateCatBreed( const Breed newBreed ) {
 
     if ( newBreed == UNKNOWN_BREED ) {
 
@@ -210,7 +211,7 @@ bool classCat::validateCatBreed(const Breed newBreed) {
 
 }
 
-bool classCat::validateCatWeight(const Weight newWeight) {
+bool classCat::validateCatWeight( const Weight newWeight ) {
 
     if (newWeight <= 0 ) {
 

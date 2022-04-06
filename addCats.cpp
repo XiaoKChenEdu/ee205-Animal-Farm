@@ -13,4 +13,4 @@
 #include "addCats.h"
 
 
-int addCat() {}
+int addCat( classCat* pNewCat ) {}
