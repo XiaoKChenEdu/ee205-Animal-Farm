@@ -32,26 +32,40 @@ class classCat {
         classCat* next;
 
     public:
-        void Cat();
+        void createCat();
 
-        void Cat( const char*               newName,
-                  const Gender             newCatGender,
-                  const Breed              newCatBreed,
-                  const Weight             newCatWeight
-//                const Color              newCollarColor1,
-//                const Color              newCollarColor2,
-//                const unsigned long long newCatLicense
-                );
+        void createCat( const char*              newCatName,
+                        const Gender             newCatGender,
+                        const Breed              newCatBreed,
+                        const Weight             newCatWeight
+//                        const Color              newCollarColor1,
+//                        const Color              newCollarColor2,
+//                        const unsigned long long newCatLicense
+                        );
 
     public:
-        //Getters
-        char* getName();
+        ////// Getters //////
+        char*  getName();
         Gender getGender();
-        Breed getBreed();
-        bool getIsFixed();
+        Breed  getBreed();
+        bool   getIsFixed();
         Weight getWeight();
 
-        //Setters
-        void setName( const char* newName );
+        ////// Setters //////
+        void setName    ( const char* newName );
+        void setGender  ( Gender newGender );
+        void setBreed   ( Breed newBreed );
+        void setIsFixed ();
+        void setWeight  ( Weight newWeight );
+
+    public:
+        bool print();
+
+    public:
+        bool validate();
+        bool validateCatName   ( const char* newName );
+        bool validateCatGender ( const Gender newGender );
+        bool validateCatBreed ( const Breed newBreed );
+        bool validateCatWeight ( const Weight newWeight );
 
 };

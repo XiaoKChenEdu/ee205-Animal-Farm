@@ -16,15 +16,4 @@
 #include "catDatabase.h"
 
 
-extern int addCat(
-
-        const char               name[],
-        const int                gender,
-        const int                breed,
-        const bool               isFixed,
-        const Weight             weight,
-        const int                collar1,
-        const int                collar2,
-        const unsigned long long license
-
-        );
+extern int addCat();

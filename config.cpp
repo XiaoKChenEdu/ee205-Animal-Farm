@@ -14,23 +14,7 @@
 #include "catDatabase.h"
 
 
-
-void checkListSize() {
-
-     for ( int i = 0; i < MAX_CAT; i++ ) {
-
-        if ( cat[i].catWeight != 0 ) {
- 
-             currentCatListSize++;
- 
-         }
- 
-     }
- 
-};
-
-
-//Turn enum item into stheckListSize() {
+//Turn enum item into string {
 char* toString( const int number, const int item ) {
 
    char returnItem[HOLDER - 1];

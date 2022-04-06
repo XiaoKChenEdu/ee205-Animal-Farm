@@ -13,10 +13,11 @@
 #pragma once
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
+#include <cstring>
+#include <stdexcept>
+#include <iostream>
+#include <iomanip>
+#include <cassert>
 
 #include "config.h"
 
@@ -35,20 +36,3 @@ enum Color  { BLACK, WHITE, RED, BLUE, GREEN, PINK };
 const Weight UNKNOWN_WEIGHT = -1;
 
 extern NumCats currentCatListSize;
-
-//extern struct catMetaData cat[MAX_CAT];
-//extern struct catMetaData {
-//
-//  char               catName[MAX_CHAR_CAT_NAME];
-//  char               catGender[HOLDER];
-//  char               catBreed[HOLDER];
-//  bool               catIsFixed;
-//  Weight             catWeight;
-//  char               collarColor1[HOLDER];
-//  char               collarColor2[HOLDER];
-//  unsigned long long catLicense;
-//
-//} cat[MAX_CAT - 1];
-
-
-//extern char* toString( const int number, const int item );
