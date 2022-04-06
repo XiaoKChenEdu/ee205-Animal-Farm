@@ -19,8 +19,14 @@
 
 #define NL           printf( "\n" );
 
-#define MAXNAME      "01234567890123456789012345678901234567890123456789"
-#define LEGALMAXNAME "012345678901234567890123456789012345678901234567890"
+#define MAXNAME      "0123456789012345678901234567890123456789012345678"
+#define LEGALMAXNAME "01234567890123456789012345678901234567890123456789"
 
 
-int main() {}
+int main() {
+
+    cout << "---- Starting Program Animal Farm ----" << endl;
+    cout << "----- Ending Program Animal Farm -----" << endl;
+
+}
+

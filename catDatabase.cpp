@@ -13,5 +13,5 @@
 #include "catDatabase.h"
 
 
-NumCats currentCatDataBaseSize;
+NumCats currentCatInDatabase;
 
