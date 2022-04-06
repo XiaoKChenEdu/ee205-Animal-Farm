@@ -14,5 +14,8 @@
 
 
 #include "config.h"
+#include "classCat.h"
+
 
 extern NumCats currentCatInDatabase;
+extern bool    validateDatabase();

@@ -13,5 +13,23 @@
 #include "catDatabase.h"
 
 
-NumCats currentCatInDatabase;
+classCat* pCatDatabaseHeadPointer = nullptr;
+
+NumCats currentCatInDatabase = 0;
+
+bool validateDatabase() {
+
+    for ( classCat* pI = pCatDatabaseHeadPointer; pI != nullptr; pI = pI -> next ) {
+
+        if ( !( pI -> validate() ) ) {
+
+            return false;
+
+        }
+
+    }
+
+    return true;
+
+}
 
