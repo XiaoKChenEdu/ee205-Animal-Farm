@@ -11,3 +11,18 @@
 
 
 #include "classCat.h"
+
+classCat::Cat() {
+
+    memset( catName, 0, MAX_CHAR_CAT_NAME );
+    catGender  = UNKNOWN_GENDER;
+    catBreed   = UNKNOWN_BREED;
+    catIsFixed = false;
+    catWeight  = UNKNOWN_WEIGHT;
+    next       = nullptr;
+
+}
+
+void classCat::Cat(const char *newName, const Gender newCatGender, const Breed newCatBreed, const Weight newCatWeight) {
+
+}

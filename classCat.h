@@ -13,6 +13,45 @@
 #pragma once
 
 
+#include "catDatabase.h"
+
+
 class classCat {
+
+    protected:
+        char               catName[MAX_CHAR_CAT_NAME];
+        enum Gender        catGender;
+        enum Breed         catBreed;
+        bool               catIsFixed;
+        Weight             catWeight;
+//        enum Color         collarColor1; //@todo: add these when i have the time.
+//        enum Color         collarColor2;
+//        unsigned long long catLicense;
+
+    public:
+        classCat* next;
+
+    public:
+        void Cat();
+
+        void Cat( const char*               newName,
+                  const Gender             newCatGender,
+                  const Breed              newCatBreed,
+                  const Weight             newCatWeight
+//                const Color              newCollarColor1,
+//                const Color              newCollarColor2,
+//                const unsigned long long newCatLicense
+                );
+
+    public:
+        //Getters
+        char* getName();
+        Gender getGender();
+        Breed getBreed();
+        bool getIsFixed();
+        Weight getWeight();
+
+        //Setters
+        void setName( const char* newName );
 
 };
