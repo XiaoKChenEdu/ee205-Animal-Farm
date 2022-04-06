@@ -34,4 +34,4 @@ enum Breed  { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX, RAGDO
 enum Color  { BLACK, WHITE, RED, BLUE, GREEN, PINK };
 const Weight UNKNOWN_WEIGHT = -1;
 
-extern char* toString( const int number, const int item );
+extern const char* toString( const int number, const int item );

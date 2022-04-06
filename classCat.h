@@ -32,16 +32,16 @@ class classCat {
         classCat* next;
 
     public:
-        void createCat();
+        classCat();
 
-        void createCat( const char*              pNewCatName,
-                        const Gender             newCatGender,
-                        const Breed              newCatBreed,
-                        const Weight             newCatWeight
-//                        const Color              newCollarColor1,
-//                        const Color              newCollarColor2,
-//                        const unsigned long long newCatLicense
-                        );
+        classCat( const char*              pNewCatName,
+                  const Gender             newCatGender,
+                  const Breed              newCatBreed,
+                  const Weight             newCatWeight
+//                  const Color              newCollarColor1,
+//                  const Color              newCollarColor2,
+//                  const unsigned long long newCatLicense
+                );
 
     public:
         ////// Getters //////

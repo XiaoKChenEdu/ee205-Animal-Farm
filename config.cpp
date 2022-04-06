@@ -14,7 +14,7 @@
 
 
 //Turn enum item into string {
-char* toString( const int number, const int item ) {
+const char* toString( const int number, const int item ) {
 
    char returnItem[HOLDER];
 
@@ -22,11 +22,11 @@ char* toString( const int number, const int item ) {
 
       switch( item ) {
 
-         case 1  : return strncpy( returnItem, "Male",           HOLDER );
+         case 1  : return "Male"          ;
 
-         case 2  : return strncpy( returnItem, "Female",         HOLDER );
+         case 2  : return "Female"        ;
 
-         default : return strncpy( returnItem, "Unknown Gender", HOLDER );
+         default : return "Unknown Gender";
 
       }
 
@@ -36,19 +36,19 @@ char* toString( const int number, const int item ) {
 
       switch( item )  {
 
-         case 1  : return strncpy( returnItem, "Maine Coon",    HOLDER );
+         case 1  : return "Maine Coon"    ;
                   
-         case 2  : return strncpy( returnItem, "Manx",          HOLDER );
+         case 2  : return "Manx"          ;
                   
-         case 3  : return strncpy( returnItem, "ShortHair",     HOLDER );
+         case 3  : return "ShortHair"     ;
                   
-         case 4  : return strncpy( returnItem, "Persian",       HOLDER );
+         case 4  : return "Persian"       ;
                   
-         case 5  : return strncpy( returnItem, "Sphynx",        HOLDER );
+         case 5  : return "Sphynx"        ;
 
-         case 6  : return strncpy( returnItem, "Ragdoll",       HOLDER );
+         case 6  : return "Ragdoll"       ;
 
-         default : return strncpy( returnItem, "Unknown Breed", HOLDER );
+         default : return "Unknown Breed" ;
      
                    
       }
@@ -59,19 +59,19 @@ char* toString( const int number, const int item ) {
    
       switch( item ) {
         
-         case 0  : return strncpy( returnItem, "Black", HOLDER );
+         case 0  : return "Black" ;
                   
-         case 1  : return strncpy( returnItem, "White", HOLDER );
+         case 1  : return "White" ;
 
-         case 2  : return strncpy( returnItem, "Red",   HOLDER );
+         case 2  : return "Red"   ;
 
-         case 3  : return strncpy( returnItem, "Blue",  HOLDER );
+         case 3  : return "Blue"  ;
 
-         case 4  : return strncpy( returnItem, "Green", HOLDER );
+         case 4  : return "Green" ;
 
-         case 5  : return strncpy( returnItem, "Pink",  HOLDER );
+         case 5  : return "Pink"  ;
 
-         default : return strncpy( returnItem, "null",  HOLDER );
+         default : return "N/A"   ;
 
       } 
 

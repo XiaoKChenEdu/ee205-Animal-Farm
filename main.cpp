@@ -17,7 +17,7 @@
 #include "reportCats.h"
 #include "deleteCats.h"
 
-#define NL           printf( "\n" );
+#define NL           cout << endl;
 
 #define MAXNAME      "0123456789012345678901234567890123456789012345678"
 #define LEGALMAXNAME "01234567890123456789012345678901234567890123456789"
@@ -26,6 +26,11 @@
 int main() {
 
     cout << "---- Starting Program Animal Farm ----" << endl;
+    NL
+
+
+
+    NL
     cout << "----- Ending Program Animal Farm -----" << endl;
 
 }

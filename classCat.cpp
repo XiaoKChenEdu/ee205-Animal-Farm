@@ -12,7 +12,7 @@
 
 #include "classCat.h"
 
-void classCat::createCat() {
+classCat::classCat() {
 
     memset( catName, 0, MAX_CHAR_CAT_NAME );
     catGender  = UNKNOWN_GENDER;
@@ -23,7 +23,7 @@ void classCat::createCat() {
 
 }
 
-void classCat::createCat(const char* pNewCatName, const Gender newCatGender, const Breed newCatBreed, const Weight newCatWeight) {
+classCat::classCat(const char* pNewCatName, const Gender newCatGender, const Breed newCatBreed, const Weight newCatWeight) {
 
     setName   (pNewCatName   );
     setGender ( newCatGender );
@@ -133,8 +133,8 @@ bool classCat::print() {
     cout << boolalpha ;
 
     FORMAT_LINE( "Cat", "name"    )      << getName()   << endl ;
-    FORMAT_LINE( "Cat", "gender"  )      << toString( 0, getGender() ) << endl ;
-    FORMAT_LINE( "Cat", "breed"   )      << toString( 1, getBreed() )   << endl ;
+    FORMAT_LINE( "Cat", "gender"  )      << toString( 0, getGender() )   << endl ;
+    FORMAT_LINE( "Cat", "breed"   )      << toString( 1, getBreed()  )   << endl ;
     FORMAT_LINE( "Cat", "isFixed" )      << getIsFixed()   << endl ;
     FORMAT_LINE( "Cat", "weight"  )      << getWeight() << endl ;
 
