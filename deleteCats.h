@@ -16,5 +16,5 @@
 #include "catDatabase.h"
 
 
-extern void deleteAllCats();
-extern int  deleteCat( const int index );
+extern bool deleteCat     ( classCat* pCatName );
+extern bool deleteAllCats ();

@@ -13,6 +13,46 @@
 #include "deleteCats.h"
 
 
-void deleteAllCats() {}
+bool deleteCat( classCat* pCatName ) {
 
-int deleteCat( const int index ) {}
+    assert( pCatName != nullptr );
+    assert( validateDatabase()  );
+
+
+    classCat* pI = pCatDatabaseHeadPointer;
+    while ( pI != nullptr ) {
+
+        if ( pI == pCatName ) {
+
+            pI = pI -> next;
+            delete pCatName;
+            currentCatInDatabase--;
+
+            assert( validateDatabase() );
+
+            return true;
+
+        }
+
+        pI = pI -> next;
+
+    }
+
+    assert( validateDatabase() );
+
+    throw invalid_argument( "Unable to delete cat, cat not found" );
+
+}
+
+bool deleteAllCats() {
+
+    while ( pCatDatabaseHeadPointer != nullptr ) {
+
+        deleteCat( pCatDatabaseHeadPointer );
+        pCatDatabaseHeadPointer = pCatDatabaseHeadPointer -> next;
+
+    }
+
+    return true;
+
+}

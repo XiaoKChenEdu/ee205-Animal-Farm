@@ -13,7 +13,7 @@
 #include "addCats.h"
 
 
-int addCat( classCat* pNewCat ) {
+bool addCat( classCat* pNewCat ) {
 
     assert( validateDatabase() );
     pNewCat -> validate();
