@@ -13,4 +13,15 @@
 #include "addCats.h"
 
 
-int addCat( classCat* pNewCat ) {}
+int addCat( classCat* pNewCat ) {
+
+    assert( validateDatabase() );
+    pNewCat -> validate();
+
+    pNewCat -> next = pCatDatabaseHeadPointer;
+    pCatDatabaseHeadPointer = pNewCat;
+    currentCatInDatabase++;
+
+    return true;
+
+}

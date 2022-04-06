@@ -17,5 +17,6 @@
 #include "classCat.h"
 
 
-extern NumCats currentCatInDatabase;
-extern bool    validateDatabase();
+extern NumCats    currentCatInDatabase;
+extern classCat*  pCatDatabaseHeadPointer;
+extern bool       validateDatabase();
