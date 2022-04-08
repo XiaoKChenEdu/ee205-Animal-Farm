@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
-project(ee205_lab_08d_animal_farm_1_to_clion)
+project(ee205-Animal-Farm)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(ee205_lab_08d_animal_farm_1_to_clion main.cpp config.cpp config.h catDatabase.cpp catDatabase.h addCats.cpp addCats.h deleteCats.cpp deleteCats.h reportCats.cpp reportCats.h classCat.cpp classCat.h)
+add_executable(ee205-Animal-Farm main.cpp config.cpp config.h catDatabase.cpp catDatabase.h addCats.cpp addCats.h deleteCats.cpp deleteCats.h reportCats.cpp reportCats.h classCat.cpp classCat.h)
