@@ -28,7 +28,8 @@ int main() {
     cout << "---- Starting Program Animal Farm ----" << endl;
     NL
 
-
+    classCat();
+    printAllCats();
 
     NL
     cout << "----- Ending Program Animal Farm -----" << endl;

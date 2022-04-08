@@ -15,6 +15,5 @@
 #include "catDatabase.h"
 
 
-extern int  printCat( const int index );
-extern void printAllCats();
-extern int  findCat( const char name[] );
+extern classCat* findCatByName( const char* pCatName );
+extern bool      printAllCats();

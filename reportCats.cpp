@@ -12,9 +12,34 @@
 
 #include "addCats.h"
 
+classCat* findCatByName( const char* pCatName ) {
 
-int printCat( const int index ) {}
+    assert( classCat().validateCatName( pCatName ) );
 
-void printAllCats() {}
+    for ( classCat* pI = pCatDatabaseHeadPointer; pI != nullptr; pI = pI -> next ) {
 
-int findCat( const char name[] ) {}
+        if ( strcmp( pCatName, pI -> getName() ) == 0 ) {
+
+            return pI;
+
+        }
+
+    }
+
+    return nullptr;
+
+}
+
+bool printAllCats() {
+
+    assert( validateDatabase() );
+
+    for ( classCat* pI = pCatDatabaseHeadPointer; pI != nullptr; pI = pI -> next ) {
+
+        pI->print();
+
+    }
+
+    return true;
+
+}
