@@ -43,6 +43,8 @@ class classCat {
 //                  const unsigned long long newCatLicense
                 );
 
+        virtual ~classCat();
+
     public:
         ////// Getters //////
         char*  getName    ();

@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
-//#define DEBUG
+#define DEBUG
 
 #include "catDatabase.h"
 #include "addCats.h"
@@ -37,10 +37,8 @@ int main() {
 
     printAllCats();
     NL
-    classCat* Kali = findCatByName( "Kali" );
-    deleteCat( Kali );
-    //deleteAllCats();
-    //addCat( new classCat ( "Hi", MALE, RAGDOLL, 1.0 ) );
+    deleteAllCats();
+    NL
     printAllCats();
 
     //////////////////////// Debug Starts Here ////////////////////////
@@ -309,36 +307,16 @@ int main() {
         try{
 
             //Creating a cat with UNKNOWN_GENDER = FAILS
-            addCat( new classCat( "RagDoll", MALE, RAGDOLL, 1.0 ) );
+            classCat RagDoll =  classCat( "RagDoll", UNKNOWN_GENDER, RAGDOLL, 1.0 );
             NL
-            cout << " @addCat( new classCat( \"RagDoll\", UNKNOWN_GENDER, RAGDOLL, 1.0 ) );" << endl;
+            cout << " @classCat RagDoll =  classCat( \"RagDoll\", UNKNOWN_GENDER, RAGDOLL, 1.0 );" << endl;
             cout << "    SUCCEED" << endl;
             NL
 
         } catch ( exception const &validationError ) {
 
             NL
-            cout << " @addCat( new classCat( \"RagDoll\", UNKNOWN_GENDER, RAGDOLL, 1.0 ) );" << endl;
-            cout << "    " << validationError.what() << endl;
-            NL
-
-        }
-
-        printAllCats();
-
-        try{
-
-            //Creating a cat with UNKNOWN_BREED = FAILS
-            addCat( new classCat( "RagDoll", MALE, UNKNOWN_BREED, 1.0 ) );
-            NL
-            cout << " @addCat( new classCat( \"RagDoll\", MALE, UNKNOWN_BREED, 1.0 ) );" << endl;
-            cout << "    SUCCEED" << endl;
-            NL
-
-        } catch ( exception const &validationError ) {
-
-            NL
-            cout << " @addCat( new classCat( \"RagDoll\", MALE, UNKNOWN_BREED, 1.0 ) );" << endl;
+            cout << " @classCat RagDoll =  classCat( \"RagDoll\", UNKNOWN_GENDER, RAGDOLL, 1.0 );" << endl;
             cout << "    " << validationError.what() << endl;
             NL
 
@@ -347,16 +325,34 @@ int main() {
         try{
 
             //Creating a cat with UNKNOWN_WEIGHT = FAILS
-            addCat( new classCat( "RagDoll", MALE, RAGDOLL, UNKNOWN_WEIGHT ) );
+            classCat RagDoll = classCat( "RagDoll1", MALE, UNKNOWN_BREED, 1.0 );
             NL
-            cout << " @addCat( new classCat( \"RagDoll\", MALE, RAGDOLL, UNKNOWN_WEIGHT ) );" << endl;
+            cout << " @classCat RagDoll = classCat( \"RagDoll\", MALE, RAGDOLL, UNKNOWN_WEIGHT );" << endl;
             cout << "    SUCCEED" << endl;
             NL
 
         } catch ( exception const &validationError ) {
 
             NL
-            cout << " @addCat( new classCat( \"RagDoll\", MALE, RAGDOLL, UNKNOWN_WEIGHT ) );" << endl;
+            cout << " @classCat RagDoll = classCat( \"RagDoll\", MALE, RAGDOLL, UNKNOWN_WEIGHT );" << endl;
+            cout << "    " << validationError.what() << endl;
+            NL
+
+        }
+
+        try{
+
+            //Creating a cat with UNKNOWN_BREED = FAILS
+            classCat RagDoll = classCat( "RagDoll", MALE, UNKNOWN_BREED, 1.0 );
+            NL
+            cout << " @classCat RagDoll = classCat( \"RagDoll\", MALE, UNKNOWN_BREED, 1.0 );" << endl;
+            cout << "    SUCCEED" << endl;
+            NL
+
+        } catch ( exception const &validationError ) {
+
+            NL
+            cout << " @classCat RagDoll = classCat( \"RagDoll\", MALE, UNKNOWN_BREED, 1.0 );" << endl;
             cout << "    " << validationError.what() << endl;
             NL
 
@@ -396,6 +392,44 @@ int main() {
 
             NL
             cout << " @classCat* Kali = findCatByName( \"Kali\" );" << endl;
+            cout << "    " << validationError.what() << endl;
+            NL
+
+        }
+
+        classCat* RagDoll = findCatByName( "RagDoll" );
+
+        try{
+
+            //Trying to delete a Cat with the name "RagDoll" = SUCCEED
+            deleteCat( RagDoll );
+            NL
+            cout << " @deleteCat( RagDoll );" << endl;
+            cout << "    SUCCEED" << endl;
+            NL
+
+        } catch ( exception const &validationError ) {
+
+            NL
+            cout << " @deleteCat( RagDoll );" << endl;
+            cout << "    " << validationError.what() << endl;
+            NL
+
+        }
+
+        try{
+
+            //Trying to delete a Cat with the name "RagDoll" again = FAILS
+            deleteCat( RagDoll );
+            NL
+            cout << " @deleteCat( RagDoll );" << endl;
+            cout << "    SUCCEED" << endl;
+            NL
+
+        } catch ( exception const &validationError ) {
+
+            NL
+            cout << " @deleteCat( RagDoll );" << endl;
             cout << "    " << validationError.what() << endl;
             NL
 

@@ -26,6 +26,8 @@ classCat* findCatByName( const char* pCatName ) {
 
     }
 
+    throw logic_error( "Cat not found / not in database" );
+
     return nullptr;
 
 }

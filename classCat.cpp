@@ -34,6 +34,16 @@ classCat::classCat(const char* pNewCatName, const Gender newCatGender, const Bre
 
 }
 
+classCat::~classCat() {
+
+    memset( catName, 0, MAX_CHAR_CAT_NAME );
+    catGender  = UNKNOWN_GENDER;
+    catBreed   = UNKNOWN_BREED;
+    catIsFixed = false;
+    catWeight  = UNKNOWN_WEIGHT;
+    next       = nullptr;
+
+}
 
 ///////////////////////// Getter Starts Here ///////////////////////
 char *classCat::getName() {
