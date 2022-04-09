@@ -53,6 +53,8 @@ bool deleteAllCats() {
 
     }
 
+    cout << "All Cat Has Been Deleted" << endl;
+
     return true;
 
 }

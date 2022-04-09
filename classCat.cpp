@@ -105,6 +105,12 @@ void classCat::setBreed( Breed newBreed ) {
 
 void classCat::setIsFixed() {
 
+    if ( catIsFixed != false ) {
+
+        throw logic_error( "Cat is already fixed" );
+
+    }
+
     classCat::catIsFixed = true;
 
 }
