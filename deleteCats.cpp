@@ -18,13 +18,22 @@ bool deleteCat( classCat* pCatName ) {
     assert( pCatName != nullptr );
     assert( validateDatabase()  );
 
+    if ( pCatName == pCatDatabaseHeadPointer ) {
+
+        pCatDatabaseHeadPointer = pCatDatabaseHeadPointer -> next;
+        delete pCatName;
+        currentCatInDatabase--;
+
+        return true;
+
+    }
 
     classCat* pI = pCatDatabaseHeadPointer;
     while ( pI != nullptr ) {
 
-        if ( pI == pCatName ) {
+        if ( pI -> next == pCatName ) {
 
-            pI = pI -> next;
+            pI -> next = pCatName -> next;
             delete pCatName;
             currentCatInDatabase--;
 
@@ -49,9 +58,10 @@ bool deleteAllCats() {
     while ( pCatDatabaseHeadPointer != nullptr ) {
 
         deleteCat( pCatDatabaseHeadPointer );
-        pCatDatabaseHeadPointer = pCatDatabaseHeadPointer -> next;
 
     }
+
+    currentCatInDatabase = 0;
 
     cout << "All Cat Has Been Deleted" << endl;
 

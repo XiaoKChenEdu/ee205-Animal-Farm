@@ -34,6 +34,14 @@ bool printAllCats() {
 
     assert( validateDatabase() );
 
+    if ( currentCatInDatabase == 0 ) {
+
+        cout << "You have no Cats in your database" << endl;
+
+        return false;
+
+    }
+
     for ( classCat* pI = pCatDatabaseHeadPointer; pI != nullptr; pI = pI -> next ) {
 
         pI->print();
