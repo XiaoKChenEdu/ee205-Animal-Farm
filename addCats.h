@@ -16,4 +16,4 @@
 #include "catDatabase.h"
 
 
-extern bool addCat( classCat* pNewCat );
+extern bool addCat( classCat* pNewCat ) ;

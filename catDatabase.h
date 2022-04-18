@@ -16,6 +16,7 @@
 #include "config.h"
 #include "classCat.h"
 
-extern NumCats          currentCatInDatabase;
-extern class classCat*  pCatDatabaseHeadPointer;
-extern bool             validateDatabase();
+extern NumCats          currentCatInDatabase    ;
+extern class classCat*  pCatDatabaseHeadPointer ;
+
+extern bool             validateDatabase() ;
