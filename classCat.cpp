@@ -15,11 +15,11 @@
 classCat::classCat() {
 
     memset( catName, 0, MAX_CHAR_CAT_NAME );
-    catGender  = UNKNOWN_GENDER;
-    catBreed   = UNKNOWN_BREED;
-    catIsFixed = false;
-    catWeight  = UNKNOWN_WEIGHT;
-    next       = nullptr;
+    catGender  = UNKNOWN_GENDER ;
+    catBreed   = UNKNOWN_BREED  ;
+    catIsFixed = false          ;
+    catWeight  = UNKNOWN_WEIGHT ;
+    next       = nullptr        ;
 
 }
 
@@ -37,11 +37,11 @@ classCat::classCat(const char* pNewCatName, const Gender newCatGender, const Bre
 classCat::~classCat() {
 
     memset( catName, 0, MAX_CHAR_CAT_NAME );
-    catGender  = UNKNOWN_GENDER;
-    catBreed   = UNKNOWN_BREED;
-    catIsFixed = false;
-    catWeight  = UNKNOWN_WEIGHT;
-    next       = nullptr;
+    catGender  = UNKNOWN_GENDER ;
+    catBreed   = UNKNOWN_BREED  ;
+    catIsFixed = false          ;
+    catWeight  = UNKNOWN_WEIGHT ;
+    next       = nullptr        ;
 
 }
 
@@ -81,9 +81,9 @@ Weight classCat::getWeight() {
 ///////////////////////// Setter Starts Here ///////////////////////
 void classCat::setName( const char* pNewName ) {
 
-    validateCatName ( pNewName );
-    memset          ( catName, 0, MAX_CHAR_CAT_NAME );
-    strcpy          (catName, pNewName );
+    validateCatName ( pNewName )                      ;
+    memset          ( catName, 0, MAX_CHAR_CAT_NAME ) ;
+    strcpy          (catName, pNewName )              ;
 
 }
 
@@ -148,11 +148,11 @@ bool classCat::print() {
     cout << left ;
     cout << boolalpha ;
 
-    FORMAT_LINE( "Cat", "name"    )      << getName()   << endl ;
+    FORMAT_LINE( "Cat", "name"    )      << getName()                    << endl ;
     FORMAT_LINE( "Cat", "gender"  )      << toString( 0, getGender() )   << endl ;
     FORMAT_LINE( "Cat", "breed"   )      << toString( 1, getBreed()  )   << endl ;
-    FORMAT_LINE( "Cat", "isFixed" )      << getIsFixed()   << endl ;
-    FORMAT_LINE( "Cat", "weight"  )      << getWeight() << endl ;
+    FORMAT_LINE( "Cat", "isFixed" )      << getIsFixed()                 << endl ;
+    FORMAT_LINE( "Cat", "weight"  )      << getWeight()                  << endl ;
 
     return true ;
 
@@ -163,10 +163,10 @@ bool classCat::validate() {
 
     try {
 
-        validateCatName   ( catName   );
-        validateCatGender ( catGender );
-        validateCatBreed  ( catBreed   );
-        validateCatWeight ( catWeight );
+        validateCatName   ( catName   ) ;
+        validateCatGender ( catGender ) ;
+        validateCatBreed  ( catBreed  ) ;
+        validateCatWeight ( catWeight ) ;
 
     } catch ( exception const& validationError ) {
 
