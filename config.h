@@ -29,9 +29,25 @@ using namespace std;
 typedef float Weight;
 typedef int NumCats;
 
-enum Gender { UNKNOWN_GENDER, MALE, FEMALE };
-enum Breed  { UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX, RAGDOLL };
-enum Color  { BLACK, WHITE, RED, BLUE, GREEN, PINK };
+enum Gender { UNKNOWN_GENDER,
+              MALE,
+              FEMALE          } ;
+
+enum Breed  { UNKNOWN_BREED,
+              MAINE_COON,
+              MANX,
+              SHORTHAIR,
+              PERSIAN,
+              SPHYNX,
+              RAGDOLL        } ;
+
+enum Color  { BLACK,
+              WHITE,
+              RED,
+              BLUE,
+              GREEN,
+              PINK   } ;
+
 const Weight UNKNOWN_WEIGHT = -1;
 
 extern const char* toString( const int number, const int item );

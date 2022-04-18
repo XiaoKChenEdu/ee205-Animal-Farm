@@ -22,11 +22,11 @@ const char* toString( const int number, const int item ) {
 
       switch( item ) {
 
-         case 1  : return "Male"          ;
+         case 1  : return "Male"           ;
 
-         case 2  : return "Female"        ;
+         case 2  : return "Female"         ;
 
-         default : return "Unknown Gender";
+         default : return "Unknown Gender" ;
 
       }
 
