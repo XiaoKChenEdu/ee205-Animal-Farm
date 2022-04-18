@@ -27,7 +27,7 @@ classCat::classCat(const char* pNewCatName, const Gender newCatGender, const Bre
 
     setName   ( pNewCatName  ) ;
     setGender ( newCatGender ) ;
-    setBreed  ( newCatBreed   ) ;
+    setBreed  ( newCatBreed  ) ;
     setWeight ( newCatWeight ) ;
 
     assert( validate() );
