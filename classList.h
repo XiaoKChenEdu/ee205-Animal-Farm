@@ -41,14 +41,14 @@ class classList {
 
     public:
         /// Deletion ///
-                void       deleteAllNodes() noexcept     ;
-        virtual classNode* pop_front()      noexcept = 0 ;
+                void       deleteAllNodes () noexcept     ;
+        virtual classNode* pop_front      () noexcept = 0 ;
         /// Deletion ///
 
     public:
         /// Validation & Print ///
-        virtual void print()    const noexcept = 0 ;
-        virtual bool validate() const noexcept = 0 ;
+        virtual void print    () const noexcept = 0 ;
+        virtual bool validate () const noexcept = 0 ;
         /// Validation & Print ///
 
 } ;

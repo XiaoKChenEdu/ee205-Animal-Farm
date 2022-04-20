@@ -30,17 +30,18 @@ class classNode {
 
     protected:
         /// Protected Static Member Functions ///
-        static bool compareByAddress ( const classNode* pNode1, const classNode* pNode2 ) ;
+        static bool compareByAddress ( const classNode* pNode1,
+                                       const classNode* pNode2  ) ;
         /// Protected Static Member Functions ///
 
     public:
         /// Validation & Print ///
-        virtual void print     ()                             const          ;
-        virtual bool validate  ()                             const noexcept ;
+        virtual void print     () const          ;
+        virtual bool validate  () const noexcept ;
         /// Validation & Print ///
 
         /// Operators ///
-        virtual bool operator> ( const classNode &RightSide )                ;
+        virtual bool operator> ( const classNode &RightSide ) ;
         /// Operators ///
 
 } ;
