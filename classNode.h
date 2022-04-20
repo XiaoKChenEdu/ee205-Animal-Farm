@@ -24,9 +24,9 @@ class classNode {
     /// Friended Classes ///
 
     protected:
-        /// Attributes ///
+        /// Protected Attributes ///
         classNode* pNext = nullptr ;
-        /// Attributes ///
+        /// Protected Attributes ///
 
     protected:
         /// Protected Static Member Functions ///
@@ -43,4 +43,4 @@ class classNode {
         virtual bool operator> ( const classNode &RightSide )                ;
         /// Operators ///
 
-};
+} ;
