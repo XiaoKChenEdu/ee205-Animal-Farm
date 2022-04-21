@@ -8,66 +8,56 @@
 ///// @author Xiaokang Chen <xiaokang@hawaii.edu>
 ///// @date   05_Apr_2022
 /////////////////////////////////////////////////////////////////////////////////
-//
-//
-//#pragma once
-//
-//
-//#include "catDatabase.h"
-//
-//
-//class classCat {
-//
-//    protected:
-//        char               catName[MAX_CHAR_CAT_NAME]{};
-//        enum Gender        catGender;
-//        enum Breed         catBreed;
-//        bool               catIsFixed;
-//        Weight             catWeight;
-////        enum Color         collarColor1; //@todo: add these when i have the time.
-////        enum Color         collarColor2;
-////        unsigned long long catLicense;
-//
-//    public:
-//        classCat* next;
-//
-//    public:
-//        classCat();
-//
-//        classCat( const char*              pNewCatName,
-//                  const Gender             newCatGender,
-//                  const Breed              newCatBreed,
-//                  const Weight             newCatWeight
-////                  const Color              newCollarColor1,
-////                  const Color              newCollarColor2,
-////                  const unsigned long long newCatLicense
-//                );
-//
-//        virtual ~classCat();
-//
-//    public:
-//        ////// Getters //////
-//        char*  getName    ();
-//        Gender getGender  ();
-//        Breed  getBreed   ();
-//        bool   getIsFixed ();
-//        Weight getWeight  ();
-//
-//        ////// Setters //////
-//        void setName    ( const char* pNewName  );
-//        void setGender  ( Gender      newGender );
-//        void setBreed   ( Breed       newBreed  );
-//        void setIsFixed ();
-//        void setWeight  ( Weight      newWeight );
-//
-//    public:
-//        bool print();
-//
-//    public:
-//        bool validate();
-//        bool validateCatName   ( const char*  pNewName  );
-//        bool validateCatGender ( const Gender newGender );
-//        bool validateCatBreed  ( const Breed  newBreed  );
-//        bool validateCatWeight ( const Weight newWeight );
-//
-//};
+
+
+#pragma once
+
+
+#include "config.h"
+#include "classMammal.h"
+
+class classCat : public classMammal {
+
+    protected:
+        /// Protected Attributes ///
+        string name       ;
+        bool   isCatFixed ;
+        /// Protected Attributes ///
+
+    public:
+        /// Static Public Attributes ///
+        static const string                SPECIES_NAME ;
+        static const classWeight::t_weight MAX_WEIGHT   ;
+        /// Static Public Attributes ///
+
+    public:
+        /// Constructor ///
+        classCat( const string                &NewName    ) ;
+        classCat( const string                &NewName,
+                  const Color                 newColor,
+                  const bool                  newIsFixed,
+                  const Gender                newGender,
+                  const classWeight::t_weight newWeight   ) ;
+        /// Constructor ///
+
+
+    public:
+        /// Getters ///
+        string getName() const noexcept ;
+        bool   isFixed() const noexcept ;
+        /// Getters ///
+
+        /// Setters ///
+        void setName ( const string &newName )          ;
+        void fixCat  ()                        noexcept ;
+        /// Setters ///
+
+
+    public:
+        /// Validation & Print ///
+        string speak    () const noexcept override ;
+        void   print    () const noexcept override ;
+        bool   validate () const noexcept override ;
+        /// Validation & Print ///
+
+};

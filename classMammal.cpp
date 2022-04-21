@@ -14,9 +14,9 @@
 #include "config.h"
 
 
-/////////////// Public Attributes ///////////////
-static const string MAMMAL_NAME = "Mammilian" ;
-/////////////// Public Attributes ///////////////
+/////////////// Static Public Attributes ///////////////
+const string classMammal::MAMMAL_NAME = "Mammilian" ;
+/////////////// Static Public Attributes ///////////////
 
 
 
