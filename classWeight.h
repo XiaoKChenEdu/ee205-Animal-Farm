@@ -59,16 +59,16 @@ class classWeight {
 
         classWeight( UnitOfWeight newUnitOfWeight  ) noexcept ; //Constructor 3
 
-        classWeight( t_weight newWeight,                    //Constructor 4
+        classWeight( t_weight newWeight,                        //Constructor 4
                      UnitOfWeight newUnitOfWeight  )          ;
 
-        classWeight( t_weight newWeight,                    //Constructor 5
+        classWeight( t_weight newWeight,                        //Constructor 5
                      t_weight newMaxWeight         )          ;
 
         classWeight( UnitOfWeight newUnitOfWeight,              //Constructor 6
                      t_weight newMaxWeight         )          ;
 
-        classWeight( t_weight newWeight,                    //Constructor 7
+        classWeight( t_weight newWeight,                        //Constructor 7
                      UnitOfWeight newUnitOfWeight,
                      t_weight newMaxWeight         )          ;
         //////////// Constructors ////////////
@@ -125,6 +125,7 @@ class classWeight {
         //////////// Operators ////////////
 
 };
+
 
 
 //////////////////// Operators ////////////////////
