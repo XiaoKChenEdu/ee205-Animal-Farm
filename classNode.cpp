@@ -46,7 +46,19 @@ void classNode::print() const {
 
 bool classNode::validate() const noexcept {
 
-    return false;
+    if ( pNext == nullptr ) {
+
+        return true ;
+
+    }
+
+    if ( pNext == pNext -> pNext ) {
+
+        return false ;
+
+    }
+
+    return true ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +72,13 @@ bool classNode::validate() const noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 bool classNode::operator>( const classNode &RightSide ) {
 
-    return false;
+    if ( this > &RightSide ) {
+
+        return true ;
+
+    }
+
+    return false ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////

@@ -12,7 +12,7 @@
 
 #include "config.h"
 
-#define DEBUG
+//#define DEBUG
 #define NL           cout << endl;
 
 
