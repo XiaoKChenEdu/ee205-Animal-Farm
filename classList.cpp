@@ -19,7 +19,13 @@
 //////////////////////////////////////////////////////////////////////////////////////
 classNode *classList::get_next( const classNode* pCurrentNode ) {
 
-    return nullptr;
+    if ( pCurrentNode == nullptr ) {
+
+        throw out_of_range( "pCurrentNode is = to nullptr" ) ;
+
+    }
+
+    return pCurrentNode -> pNext;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -33,31 +39,67 @@ classNode *classList::get_next( const classNode* pCurrentNode ) {
 //////////////////////////////////////////////////////////////////////////////////////
 bool classList::empty() const noexcept {
 
-    return false;
+    if ( pHead == nullptr) {
+
+        return true ;
+
+    }
+
+    return false ;
 
 }
 
 unsigned int classList::size() const noexcept {
 
-    return 0;
+    return count ;
 
 }
 
 bool classList::isIn( classNode* pNode ) const {
 
-    return false;
+    classNode* pCompareNode = pHead ;
+
+    if ( pNode == nullptr ) {
+
+        throw out_of_range( "pNode is set to nullptr, please enter a proper node" ) ;
+
+    }
+
+    while ( pCompareNode != nullptr ) {
+
+        if ( pNode == pCompareNode ) {
+
+            return true ;
+
+        }
+
+        pCompareNode = pCompareNode -> pNext ;
+
+    }
+
+    return false ;
 
 }
 
 bool classList::isSorted() const noexcept {
 
-    return false;
+    for ( classNode* pI; pI -> pNext != nullptr; pI = pI -> pNext ) {
+
+        if ( pI > pI -> pNext ) {
+
+            return false ;
+
+        }
+
+    }
+
+    return true ;
 
 }
 
 classNode *classList::get_first() const noexcept {
 
-    return nullptr;
+    return pHead ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
