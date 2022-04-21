@@ -65,7 +65,43 @@ void classSinglyLinkedList::print() const noexcept {
 
 bool classSinglyLinkedList::validate() const noexcept {
 
-    return false;
+    if ( pHead == nullptr ) {
+
+        if ( ( count == 0 ) && ( empty() ) ) {
+
+            return true ;
+
+        }
+
+        return false ;
+
+    } else if ( (count != 0 ) && ( !empty() ) ) {
+
+        return true ;
+
+    }
+
+    unsigned int testCount = 0     ;
+    classNode*   pTestNode = pHead ;
+
+    while ( pTestNode != nullptr ) {
+
+        testCount++ ;
+        pTestNode = pTestNode -> pNext ;
+
+    }
+
+    if ( testCount == size() ) {
+
+        return true ;
+
+    } else if ( testCount != size() ) {
+
+        return false ;
+
+    }
+
+    return true;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////

@@ -19,6 +19,8 @@
 #include <iomanip>
 #include <cassert>
 
+#define PROGRAM_NAME "Animal Farm"
+
 /// Format the heading for dumping members of a class to the console
 ///
 /// Print =====================

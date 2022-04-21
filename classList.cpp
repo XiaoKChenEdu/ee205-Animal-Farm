@@ -21,7 +21,7 @@ classNode *classList::get_next( const classNode* pCurrentNode ) {
 
     if ( pCurrentNode == nullptr ) {
 
-        throw out_of_range( "pCurrentNode is = to nullptr" ) ;
+        throw out_of_range( PROGRAM_NAME ": pCurrentNode is = to nullptr" ) ;
 
     }
 
@@ -61,7 +61,7 @@ bool classList::isIn( classNode* pNode ) const {
 
     if ( pNode == nullptr ) {
 
-        throw out_of_range( "pNode is set to nullptr, please enter a proper node" ) ;
+        throw out_of_range( PROGRAM_NAME ": pNode is set to nullptr, please enter a proper node" ) ;
 
     }
 
@@ -82,6 +82,8 @@ bool classList::isIn( classNode* pNode ) const {
 }
 
 bool classList::isSorted() const noexcept {
+
+    assert( validate() ) ;
 
     for ( classNode* pI; pI -> pNext != nullptr; pI = pI -> pNext ) {
 
@@ -113,7 +115,21 @@ classNode *classList::get_first() const noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 void classList::deleteAllNodes() noexcept {
 
+    assert( validate() ) ;
 
+    while ( pHead != nullptr ) {
+
+        pop_front() ;
+
+    }
+
+    assert( validate() ) ;
+
+    #ifdef DEBUG
+
+        cout << PROGRAM_NAME << ": All Nodes have been deleted" << endl ;
+
+    #endif
 
 }
 //////////////////////////////////////////////////////////////////////////////////////

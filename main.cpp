@@ -11,6 +11,7 @@
 
 
 #include "config.h"
+#include "classSinglyLinkedList.h"
 
 //#define DEBUG
 #define NL           cout << endl;
