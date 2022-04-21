@@ -15,8 +15,8 @@
 
 #include "config.h"
 #include "classNode.h"
-#include "enumClassGender.h"
 #include "classWeight.h"
+#include "enumClassGender.h"
 
 
 class classAnimal : public classNode {
@@ -37,13 +37,13 @@ class classAnimal : public classNode {
     public:
         /// Constructor ///
         classAnimal( const classWeight::t_weight newMaxWeight,
-                     const string &NewClassification,
-                     const string &NewSpecies                  ) ;
-        classAnimal( const Gender newGender,
+                     const string                &NewClassification,
+                     const string                &NewSpecies         ) ;
+        classAnimal( const Gender                newGender,
                      const classWeight::t_weight newWeight,
                      const classWeight::t_weight newMaxWeight,
-                     const string &NewClassification,
-                     const string &newSpecies                  ) ;
+                     const string                &NewClassification,
+                     const string                &newSpecies         ) ;
         /// Constructor ///
 
     public:

@@ -16,12 +16,13 @@
 #include "config.h"
 
 
-enum class Color { BLACK,
+enum class Color { UNKNOWN_COLOR = 0,
+                   BLACK,
                    WHITE,
                    RED,
                    BLUE,
                    GREEN,
-                   PINK   } ;
+                   PINK               } ;
 
 inline ostream &operator<<( ostream &lhs_stream, const Color &rhs_Color ) {
 
