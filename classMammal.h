@@ -1,14 +1,16 @@
-//
-// Created by chen1 on 4/20/2022.
-//
+///////////////////////////////////////////////////////////////////////////////
+///         University of Hawaii, College of Engineering
+/// @brief  ee205-Animal-Farm - EE 205 - Spr 2022
+///
+/// @file classMammal.h
+/// @version 1.0
+///
+/// @author Xiaokang Chen <xiaokang@hawaii.edu>
+/// @date   20_Apr_2022
+///////////////////////////////////////////////////////////////////////////////
 
-#ifndef EE205_ANIMAL_FARM_CLASSMAMMAL_H
-#define EE205_ANIMAL_FARM_CLASSMAMMAL_H
+
+#pragma once
 
 
-class classMammal {
-
-};
-
-
-#endif //EE205_ANIMAL_FARM_CLASSMAMMAL_H
+#include "config.h"
