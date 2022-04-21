@@ -19,35 +19,12 @@
 #include <iomanip>
 #include <cassert>
 
-
-#define MAX_CAT               1024
-#define MAX_CHAR_CAT_NAME     50
-#define HOLDER                25
+/// Format the heading for dumping members of a class to the console
+///
+/// Print =====================
+#define PRINT_HEADING_FOR_PRINT cout << setw(80) << setfill( '=' ) << "" << endl
+/// Format a line for dumping the members of a class to the console.
+/// Setup the fields for printing (space pad, left justify, etc.)
+#define FORMAT_LINE_FOR_PRINT( className, member ) cout << setfill( ' ' ) << left << boolalpha << setw(8)  << (className) << setw(20) << (member) << setw(52)
 
 using namespace std;
-
-typedef float Weight;
-typedef int NumCats;
-
-//enum Gender { UNKNOWN_GENDER,
-//              MALE,
-//              FEMALE          } ;
-//
-//enum Breed  { UNKNOWN_BREED,
-//              MAINE_COON,
-//              MANX,
-//              SHORTHAIR,
-//              PERSIAN,
-//              SPHYNX,
-//              RAGDOLL        } ;
-//
-//enum Color  { BLACK,
-//              WHITE,
-//              RED,
-//              BLUE,
-//              GREEN,
-//              PINK   } ;
-
-const Weight UNKNOWN_WEIGHT = -1;
-
-extern const char* toString( const int number, const int item );

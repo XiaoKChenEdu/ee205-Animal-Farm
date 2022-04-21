@@ -19,7 +19,13 @@
 //////////////////////////////////////////////////////////////////////////////////////
 bool classNode::compareByAddress( const classNode* pNode1, const classNode* pNode2 ) {
 
-    return false;
+    if ( pNode1 > pNode2 ) {
+
+        return true ;
+
+    }
+
+    return false ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -33,6 +39,8 @@ bool classNode::compareByAddress( const classNode* pNode1, const classNode* pNod
 //////////////////////////////////////////////////////////////////////////////////////
 void classNode::print() const {
 
+    FORMAT_LINE_FOR_PRINT( "Node", "this" ) << this  << endl ;
+    FORMAT_LINE_FOR_PRINT( "Node", "next" ) << pNext << endl ;
 
 }
 
