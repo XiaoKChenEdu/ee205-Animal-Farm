@@ -23,9 +23,19 @@ const string classAnimal::KINGDOM_NAME = "Animalia" ;
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// Constructors ////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
-classAnimal::classAnimal( const classWeight::t_weight newMaxWeight, const string &NewClassification, const string &NewSpecies ) {
+classAnimal::classAnimal( const classWeight::t_weight newMaxWeight, const string &NewClassification, const string &NewSpecies ) : classNode(), weight( classWeight::POUND, newMaxWeight ) {
 
+    if ( !validateClassification( NewClassification ) ) {
 
+        throw logic_error( PROGRAM_NAME ": Your NewClassification is invalid" ) ;
+
+    }
+
+    if ( !validateSpecies( NewSpecies ) ) {
+
+        throw logic_error( PROGRAM_NAME ": Your NewSpecies is invalid")
+
+    }
 
 }
 
@@ -103,13 +113,25 @@ void classAnimal::setGender(const Gender newGender) {
 //////////////////////////////////////////////////////////////////////////////////////
 bool classAnimal::validateClassification(const string &checkClassification) noexcept {
 
-    return false;
+    if ( checkClassification.empty() ) {
+
+        return false ;
+
+    }
+
+    return true ;
 
 }
 
 bool classAnimal::validateSpecies(const string &checkSpecies) noexcept {
 
-    return false;
+    if ( checkSpecies.empty() ) {
+
+        return false ;
+
+    }
+
+    return true ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -129,7 +151,13 @@ void classAnimal::print() const noexcept {
 
 bool classAnimal::validate() const noexcept {
 
-    return classNode::validate();
+    assert( classNode::validate() ) ;
+    assert( !getKingdom().empty() ) ;
+    assert( validateClassification( getClassification() ) ) ;
+    assert( validateSpecies( getSpecies() ) ) ;
+    assert( weight.validate() ) ;
+
+    return true ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
