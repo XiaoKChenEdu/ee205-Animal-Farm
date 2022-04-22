@@ -129,8 +129,8 @@ class classWeight {
 
 
 //////////////////// Operators ////////////////////
-ostream &operator<<( ostream                   &lhs_stream,
-                     classWeight::UnitOfWeight rhs_UnitOfWeight ) ;
-ostream &operator<<( ostream                   &lhs_stream,
-                     classWeight               rhs_Weight       ) ;
+ostream &operator<<( ostream                         &lhs_stream,
+                     const classWeight::UnitOfWeight rhs_UnitOfWeight ) ;
+ostream &operator<<( ostream                         &lhs_stream,
+                     const classWeight               &rhs_Weight      ) ;
 //////////////////// Operators ////////////////////
