@@ -25,13 +25,30 @@ const classWeight::t_weight classCat::MAX_WEIGHT   = 40            ;
 //////////////////////////////////////////////////////////////////////////////////////
 classCat::classCat( const string &NewName ) : classMammal( MAX_WEIGHT, SPECIES_NAME ) {
 
+    if ( !validateName( NewName ) ) {
 
+        throw logic_error( PROGRAM_NAME ": Your cat needs a proper name" ) ;
+
+    }
+
+    name = NewName ;
+
+    classCat::validate() ;
 
 }
 
 classCat::classCat( const string &NewName, const Color newColor, const bool newIsFixed, const Gender newGender, const classWeight::t_weight newWeight ) : classMammal( newColor, newGender, newWeight, MAX_WEIGHT, SPECIES_NAME )  {
 
+    if ( !validateName( NewName ) ) {
 
+        throw logic_error( PROGRAM_NAME ": Your cat needs a proper name" ) ;
+
+    }
+
+    name       = NewName    ;
+    isCatFixed = newIsFixed ;
+
+    classCat::validate() ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -45,13 +62,13 @@ classCat::classCat( const string &NewName, const Color newColor, const bool newI
 //////////////////////////////////////////////////////////////////////////////////////
 string classCat::getName() const noexcept {
 
-    return std::string();
+    return name ;
 
 }
 
 bool classCat::isFixed() const noexcept {
 
-    return false;
+    return isCatFixed ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -63,15 +80,21 @@ bool classCat::isFixed() const noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////// Setters ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
-void classCat::setName( const string &newName ) {
+void classCat::setName( const string &NewName ) {
 
+    if ( !validateName( NewName ) ) {
 
+        throw logic_error( PROGRAM_NAME ": Your cat needs a proper name" ) ;
+
+    }
+
+    name = NewName ;
 
 }
 
 void classCat::fixCat() noexcept {
 
-
+    classCat::isCatFixed = true ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -81,23 +104,49 @@ void classCat::fixCat() noexcept {
 
 
 //////////////////////////////////////////////////////////////////////////////////////
+////////////////////////// Static Public Member Functions ////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+bool classCat::validateName( const string &NewName ) {
+
+    if ( NewName.empty() ) {
+
+        return false ;
+
+    }
+
+    return true ;
+
+}
+//////////////////////////////////////////////////////////////////////////////////////
+////////////////////////// Static Public Member Functions ////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Validation & Print //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 string classCat::speak() const noexcept {
 
-    return std::string();
+    return "Meow" ;
 
 }
 
 void classCat::print() const noexcept {
 
-    classMammal::print();
+    classMammal::print() ;
+
+    FORMAT_LINE_FOR_PRINT( "Cat", "Name"    ) << getName() << endl ;
+    FORMAT_LINE_FOR_PRINT( "Cat", "IsFixed" ) << isFixed() << endl ;
 
 }
 
 bool classCat::validate() const noexcept {
 
-    return classAnimal::validate();
+    assert( classAnimal::validate() )   ;
+    assert( validateName( getName() ) ) ;
+
+    return true ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////

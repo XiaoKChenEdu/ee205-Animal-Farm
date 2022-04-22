@@ -21,7 +21,7 @@ class classCat : public classMammal {
     protected:
         /// Protected Attributes ///
         string name       ;
-        bool   isCatFixed ;
+        bool   isCatFixed = false ;
         /// Protected Attributes ///
 
     public:
@@ -48,10 +48,14 @@ class classCat : public classMammal {
         /// Getters ///
 
         /// Setters ///
-        void setName ( const string &newName )          ;
+        void setName ( const string &NewName )          ;
         void fixCat  ()                        noexcept ;
         /// Setters ///
 
+    public:
+        /// Static Public Member Function ///
+        static bool validateName( const string &NewName ) ;
+        /// Static Public Member Function ///
 
     public:
         /// Validation & Print ///
