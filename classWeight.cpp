@@ -398,7 +398,7 @@ classWeight &classWeight::operator+=( const classWeight::t_weight rhs_addToWeigh
 
 }
 
-std::ostream& operator<<( ostream &lhs_stream, const classWeight::UnitOfWeight rhs_UnitOfWeight ) {
+std::ostream &operator<<( ostream &lhs_stream, const classWeight::UnitOfWeight rhs_UnitOfWeight ) {
 
     switch( rhs_UnitOfWeight ) {
 
@@ -412,6 +412,8 @@ std::ostream& operator<<( ostream &lhs_stream, const classWeight::UnitOfWeight r
 
     }
 }
+
+
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// Operators ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////

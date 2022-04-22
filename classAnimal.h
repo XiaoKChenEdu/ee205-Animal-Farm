@@ -43,7 +43,7 @@ class classAnimal : public classNode {
                      const classWeight::t_weight newWeight,
                      const classWeight::t_weight newMaxWeight,
                      const string                &NewClassification,
-                     const string                &newSpecies         ) ;
+                     const string                &NewSpecies         ) ;
         /// Constructor ///
 
     public:

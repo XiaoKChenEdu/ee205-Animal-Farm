@@ -33,15 +33,37 @@ classAnimal::classAnimal( const classWeight::t_weight newMaxWeight, const string
 
     if ( !validateSpecies( NewSpecies ) ) {
 
-        throw logic_error( PROGRAM_NAME ": Your NewSpecies is invalid")
+        throw logic_error( PROGRAM_NAME ": Your NewSpecies is invalid") ;
 
     }
 
+    classification = NewClassification ;
+    species        = NewSpecies        ;
+
+    assert( classAnimal::validate() ) ;
+
 }
 
-classAnimal::classAnimal( const Gender newGender, const classWeight::t_weight newWeight, const classWeight::t_weight newMaxWeight, const string &NewClassification, const string &newSpecies ) {
+classAnimal::classAnimal( const Gender newGender, const classWeight::t_weight newWeight, const classWeight::t_weight newMaxWeight, const string &NewClassification, const string &NewSpecies ) : classNode(), weight ( newWeight, newMaxWeight ) {
 
+    if ( !validateClassification( NewClassification ) ) {
 
+        throw logic_error( PROGRAM_NAME ": Your NewClassification is invalid" ) ;
+
+    }
+
+    if ( !validateSpecies( NewSpecies ) ) {
+
+        throw logic_error( PROGRAM_NAME ": Your NewSpecies is invalid") ;
+
+    }
+
+    classification = NewClassification ;
+    species        = NewSpecies        ;
+
+    setGender( newGender ) ;
+
+    assert( classAnimal::validate() ) ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -55,31 +77,31 @@ classAnimal::classAnimal( const Gender newGender, const classWeight::t_weight ne
 //////////////////////////////////////////////////////////////////////////////////////
 string classAnimal::getKingdom() const noexcept {
 
-    return std::string();
+    return KINGDOM_NAME ;
 
 }
 
 string classAnimal::getClassification() const noexcept {
 
-    return std::string();
+    return classification ;
 
 }
 
 string classAnimal::getSpecies() const noexcept {
 
-    return std::string();
+    return species ;
 
 }
 
 Gender classAnimal::getGender() const noexcept {
 
-    return Gender::UNKNOWN_GENDER;
+    return gender ;
 
 }
 
 classWeight::t_weight classAnimal::getWeight() const noexcept {
 
-    return 0;
+    return weight.getWeight() ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -93,13 +115,23 @@ classWeight::t_weight classAnimal::getWeight() const noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 void classAnimal::setWeight(const classWeight::t_weight newWeight) {
 
+    weight.setWeight( newWeight ) ;
 
+    assert( classAnimal::validate() ) ;
 
 }
 
 void classAnimal::setGender(const Gender newGender) {
 
+    if ( gender != Gender::UNKNOWN_GENDER ) {
 
+        throw logic_error( PROGRAM_NAME ": Gender was already set, you may not change it" ) ;
+
+    }
+
+    gender = newGender ;
+
+    assert( classAnimal::validate() ) ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -145,7 +177,12 @@ bool classAnimal::validateSpecies(const string &checkSpecies) noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 void classAnimal::print() const noexcept {
 
-    classNode::print();
+    FORMAT_LINE_FOR_PRINT( "Animal", "this"           ) << this           << endl ;
+    FORMAT_LINE_FOR_PRINT( "Animal", "Kingdom"        ) << KINGDOM_NAME   << endl ;
+    FORMAT_LINE_FOR_PRINT( "Animal", "Classification" ) << classification << endl ;
+    FORMAT_LINE_FOR_PRINT( "Animal", "Species"        ) << species        << endl ;
+    FORMAT_LINE_FOR_PRINT( "Animal", "Gender"         ) << gender         << endl ;
+    FORMAT_LINE_FOR_PRINT( "Animal", "Weight"         ) << weight         << endl ;
 
 }
 

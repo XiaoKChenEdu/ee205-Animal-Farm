@@ -121,7 +121,7 @@ class classWeight {
         bool operator== ( const classWeight& rhs_Weight ) const ;
         bool operator<  ( const classWeight& rhs_Weight ) const ;
 
-        classWeight& operator+=( t_weight rhs_addToWeight ) ;
+        classWeight &operator+=( t_weight rhs_addToWeight ) ;
         //////////// Operators ////////////
 
 };
@@ -129,5 +129,5 @@ class classWeight {
 
 
 //////////////////// Operators ////////////////////
-std::ostream& operator<<( std::ostream& lhs_stream, classWeight::UnitOfWeight rhs_UnitOfWeight );
+std::ostream &operator<<( std::ostream& lhs_stream, classWeight::UnitOfWeight rhs_UnitOfWeight );
 //////////////////// Operators ////////////////////
