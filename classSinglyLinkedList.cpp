@@ -19,7 +19,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 classSinglyLinkedList::classSinglyLinkedList() {
 
-
+    assert( validate() ) ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -33,19 +33,108 @@ classSinglyLinkedList::classSinglyLinkedList() {
 //////////////////////////////////////////////////////////////////////////////////////
 void classSinglyLinkedList::push_front( classNode* pNewNode ) {
 
+    if ( pNewNode == nullptr ) {
 
+        throw invalid_argument( PROGRAM_NAME ": pNewNode has to != nullptr" ) ;
+
+    }
+
+    if ( isIn( pNewNode ) ) {
+
+        throw logic_error( PROGRAM_NAME ": pNewNode already exist" ) ;
+
+    }
+
+    if ( pHead != nullptr ) {
+
+        pNewNode -> pNext = pHead ;
+        pHead = pNewNode ;
+
+    }
+
+    if ( pHead == nullptr ) {
+
+        pNewNode -> pNext = nullptr ;
+        pHead = pNewNode ;
+
+    }
+
+    assert( validate() ) ;
+    count++ ;
 
 }
 
 void classSinglyLinkedList::insert_after( classNode* pCurrentNode, classNode* pNewNode ) {
 
+    if ( !pNewNode -> validate() ) {
 
+        throw logic_error( PROGRAM_NAME ": pNewNode is invalid" ) ;
+
+    }
+
+    if ( pHead == nullptr ) {
+
+        throw logic_error( PROGRAM_NAME ": Your list is empty." ) ;
+
+    }
+
+    if ( pCurrentNode == nullptr ) {
+
+        throw logic_error( PROGRAM_NAME ": You cannot insert a node after a nullptr" ) ;
+
+    }
+
+    if ( pNewNode == nullptr ) {
+
+        throw logic_error( PROGRAM_NAME ": pNewNode must have a value" ) ;
+
+    }
+
+    if ( !isIn( pCurrentNode ) ) {
+
+        throw logic_error( PROGRAM_NAME ": pCurrentNode must be in the list" ) ;
+
+    }
+
+    if ( isIn( pNewNode ) ) {
+
+        throw logic_error( PROGRAM_NAME ": pNewNode already exist" ) ;
+
+    }
+
+    pNewNode     -> pNext = pCurrentNode -> pNext ;
+    pCurrentNode -> pNext = pNewNode              ;
+
+    assert( validate() ) ;
+    count++ ;
 
 }
 
 classNode *classSinglyLinkedList::pop_front() noexcept {
 
-    return nullptr;
+    if ( pHead == nullptr ) {
+
+        return nullptr ;
+
+    }
+
+    classNode* pNodeToPop = pHead ;
+
+    if ( pHead -> pNext != nullptr ) {
+
+        pHead = pHead -> pNext ;
+        delete pNodeToPop;
+
+    } else {
+
+        pHead = nullptr ;
+
+    }
+
+    assert( validate() ) ;
+    count-- ;
+
+    return pHead ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
@@ -59,6 +148,7 @@ classNode *classSinglyLinkedList::pop_front() noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 void classSinglyLinkedList::print() const noexcept {
 
+    // @todo a bit confused while do it later.
 
 
 }
