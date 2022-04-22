@@ -129,5 +129,8 @@ class classWeight {
 
 
 //////////////////// Operators ////////////////////
-std::ostream &operator<<( std::ostream& lhs_stream, classWeight::UnitOfWeight rhs_UnitOfWeight );
+ostream &operator<<( ostream                   &lhs_stream,
+                     classWeight::UnitOfWeight rhs_UnitOfWeight ) ;
+ostream &operator<<( ostream                   &lhs_stream,
+                     classWeight               rhs_Weight       ) ;
 //////////////////// Operators ////////////////////

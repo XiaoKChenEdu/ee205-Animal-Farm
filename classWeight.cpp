@@ -398,7 +398,7 @@ classWeight &classWeight::operator+=( const classWeight::t_weight rhs_addToWeigh
 
 }
 
-std::ostream &operator<<( ostream &lhs_stream, const classWeight::UnitOfWeight rhs_UnitOfWeight ) {
+ostream &operator<<( ostream &lhs_stream, const classWeight::UnitOfWeight rhs_UnitOfWeight ) {
 
     switch( rhs_UnitOfWeight ) {
 
@@ -413,6 +413,42 @@ std::ostream &operator<<( ostream &lhs_stream, const classWeight::UnitOfWeight r
     }
 }
 
+ostream &operator<<( ostream &lhs_stream, const classWeight &rhs_Weight ) {
+
+    stringstream stringBuffer ;
+
+    if ( !rhs_Weight.isWeightKnown() && !rhs_Weight.hasMaxWeight() ) {
+
+        lhs_stream << "Unknown" ;
+        return lhs_stream ;
+
+    } else if ( rhs_Weight.isWeightKnown() ) {
+
+        stringBuffer << rhs_Weight.getWeight() ;
+
+    } else {
+
+        stringBuffer << "Unknown" ;
+
+    }
+
+    if ( rhs_Weight.hasMaxWeight() ) {
+
+        stringBuffer << " out of " << rhs_Weight.getMaxWeight() ;
+
+    }
+
+    stringBuffer << " " << rhs_Weight.getWeightUnit() ;
+
+    if ( ( ( !rhs_Weight.hasMaxWeight() ) && ( rhs_Weight.getWeight() > 1 ) ) || ( ( rhs_Weight.hasMaxWeight() ) && ( rhs_Weight.getMaxWeight() > 1 ) ) ) {
+
+        stringBuffer << "s" ;
+
+    }
+
+    return lhs_stream << stringBuffer.str() ;
+
+}
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// Operators ///////////////////////////////////////
