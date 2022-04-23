@@ -55,8 +55,28 @@ void checkListProperty() {
 
     /// checking if a node is in list ///
         /// SUCCEED ///
+        cout << " @TestDB.isIn( pTest0 )"   << endl ;
+        cout << S4 << TestDB.isIn( pTest0 ) << endl ;
 
+        classNode* pNotIn = new classCat( "NotIn" ) ;
+        cout << " @TestDB.isIn( pNotin )"   << endl ;
+        cout << S4 << TestDB.isIn( pNotIn ) << endl ;
         /// SUCCEED ///
+
+        /// FAILS ///
+        try {
+
+            TestDB.isIn( nullptr ) ;
+            cout << " @TestDB.isIn( nullptr ) ;" << endl ;
+            cout << S4 << "SUCCEED"              << endl ;
+
+        } catch ( const exception &Error ) {
+
+            cout << " @TestDB.isIn( nullptr ) ;" << endl ;
+            cout << S4 << Error.what()           << endl ;
+
+        }
+        /// FAILS ///
     /// checking if a node is in list ///
 
 }
@@ -182,7 +202,7 @@ void checkListModifying() {
         } catch ( const exception &Error ) {
 
             cout << " @TestDB.insert_after( pTest0, pTest1 ) ;" << endl ;
-            cout << "    " << Error.what()                      << endl ;
+            cout << S4 << Error.what()                          << endl ;
 
         }
         /// FAILS ///
