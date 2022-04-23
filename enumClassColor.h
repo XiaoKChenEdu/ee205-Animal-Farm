@@ -18,6 +18,7 @@
 
 enum class Color { UNKNOWN_COLOR = 0,
                    BLACK,
+                   BROWN,
                    WHITE,
                    RED,
                    BLUE,
@@ -29,22 +30,25 @@ inline ostream &operator<<( ostream &lhs_stream, const Color &rhs_Color ) {
     switch ( rhs_Color ) {
 
         case Color::BLACK : lhs_stream << "Black" ;
-            break;
+            break ;
+
+        case Color::BROWN : lhs_stream << "Brown" ;
+            break ;
 
         case Color::WHITE : lhs_stream << "White" ;
-            break;
+            break ;
 
         case Color::RED   : lhs_stream << "Red"   ;
-            break;
+            break ;
 
         case Color::BLUE  : lhs_stream << "Blue"  ;
-            break;
+            break ;
 
         case Color::GREEN : lhs_stream << "Green" ;
-            break;
+            break ;
 
         case Color::PINK  : lhs_stream << "Pink"  ;
-            break;
+            break ;
 
         default:
             throw out_of_range( "Color not mapped to a string" ) ;

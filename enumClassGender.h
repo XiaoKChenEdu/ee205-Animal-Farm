@@ -26,19 +26,19 @@ inline ostream &operator<<( ostream &lhs_stream, const Gender &rhs_Gender ) {
     switch ( rhs_Gender ) {
 
         case Gender::UNKNOWN_GENDER : lhs_stream << "Unknown Gender" ;
-            break;
+            break ;
 
         case Gender::MALE           : lhs_stream << "Male"           ;
-            break;
+            break ;
 
         case Gender::FEMALE         : lhs_stream << "Female"         ;
-            break;
+            break ;
 
         default:
             throw out_of_range( "Gender not mapped to a string" ) ;
 
     }
 
-    return lhs_stream;
+    return lhs_stream ;
 
 }

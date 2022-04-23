@@ -25,9 +25,29 @@ int main() {
 
     classSinglyLinkedList catDB;
 
-    catDB.push_front( new classCat( "Loki", Color::WHITE, true, Gender::MALE, 1.0 ) );
+    catDB.push_front( new classCat( "Loki",  Color::WHITE, true, Gender::MALE,   1.0 ) ) ;
+    catDB.push_front( new classCat( "Milo",  Color::BLACK, true, Gender::MALE,   1.1 ) ) ;
+    catDB.push_front( new classCat( "Bella", Color::BROWN, true, Gender::FEMALE, 1.2 ) ) ;
+    catDB.push_front( new classCat( "Kali",  Color::BLUE,  true, Gender::FEMALE, 1.3 ) ) ;
+    catDB.push_front( new classCat( "Trin",  Color::WHITE, true, Gender::FEMALE, 1.4 ) ) ;
 
-    catDB.print() ;
+    catDB.insert_after( catDB.get_first(), new classCat( "Chili", Color::RED, true, Gender::MALE, 1.5 ) ) ;
+
+    for ( classAnimal* pI = (classAnimal*)catDB.get_first(); pI != nullptr; pI = (classAnimal*)classList::get_next( (classNode*)pI ) ) {
+
+        cout << pI -> speak() ;
+
+    }
+
+    NL
+
+    catDB.validate       () ;
+    catDB.print          () ;
+    catDB.deleteAllNodes () ;
+
+    NL
+
+    catDB.print          () ;
 
     //////////////////////// Debug Starts Here ////////////////////////
     #ifdef DEBUG
@@ -48,6 +68,8 @@ int main() {
 
     NL
     cout << "----- Ending Program Animal Farm -----" << endl;
+
+    return ( EXIT_SUCCESS ) ;
 
 }
 

@@ -131,8 +131,8 @@ classNode *classSinglyLinkedList::pop_front() noexcept {
 
     }
 
-    assert( validate() ) ;
     count-- ;
+    assert( validate() ) ;
 
     return pHead ;
 
