@@ -43,7 +43,7 @@ void checkListProperty() {
     cout << " @TestDB.size()"       << endl ;
     cout << S4 << TestDB.size()     << endl ;
     cout << " @TestDB.isSorted()"   << endl ;
-    cout << S4 << TestDB.isSorted() << endl ;
+    cout << S4 << TestDB.isSorted() << endl ;    //@todo: fix bug for isSorted
     /// checking if list is empty & list count ///
 
     /// checking if a node is in list ///
@@ -80,12 +80,12 @@ void checkListModifying() {
             classNode* pTest0 = TestDB.get_first() ;
             TestDB.push_front( pTest0 ) ;
             cout << " @TestDB.push_front( pTest0 ) ;" << endl ;
-            cout << "    SUCCEED"                     << endl ;
+            cout << S4 << "SUCCEED"                   << endl ;
 
         } catch ( const exception &Error ) {
 
             cout << " @TestDB.push_front( pTest0 ) ;" << endl ;
-            cout << "    " << Error.what()            << endl ;
+            cout << S4 << Error.what()                << endl ;
 
         }
 
@@ -93,12 +93,12 @@ void checkListModifying() {
 
             TestDB.push_front( nullptr ) ;
             cout << " @TestDB.push_front( nullptr ) ;" << endl ;
-            cout << "    SUCCEED"                      << endl ;
+            cout << S4 <<" SUCCEED"                    << endl ;
 
         } catch ( const exception &Error ) {
 
             cout << " @TestDB.push_front( nullptr ) ;" << endl ;
-            cout << "    " << Error.what()             << endl ;
+            cout << S4 << Error.what()                 << endl ;
 
         }
 
@@ -106,12 +106,12 @@ void checkListModifying() {
 
             TestDB.push_front( new classCat( "" ) ) ;
             cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
-            cout << "    SUCCEED"                                   << endl ;
+            cout << S4 << "SUCCEED"                                 << endl ;
 
         } catch ( const exception &Error ) {
 
             cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
-            cout << "    " << Error.what()                          << endl ;
+            cout << S4 << Error.what()                              << endl ;
 
         }
         /// FAILS ///
@@ -124,12 +124,12 @@ void checkListModifying() {
             classNode* pTest0 = TestDB.get_first() ;
             TestDB.insert_after( pTest0, new classCat( "Test1" ) ) ;
             cout << " @TestDB.insert_after( pTest0, new classCat( \"Test1\" ) ) ;" << endl ;
-            cout << "    SUCCEED"                                                  << endl ;
+            cout << S4 << "SUCCEED"                                                << endl ;
 
         } catch ( const exception &Error ) {
 
             cout << " @TestDB.insert_after( pTest0, new classCat( \"Test1\" ) ) ;" << endl ;
-            cout << "    " << Error.what()                                         << endl ;
+            cout << S4 << Error.what()                                             << endl ;
 
         }
         /// SUCCEED ///
@@ -139,12 +139,12 @@ void checkListModifying() {
 
             TestDB.insert_after( nullptr, new classCat( "TestFail" ) ) ;
             cout << " @TestDB.insert_after( nullptr, new classCat( \"TestFail\" ) ) ;" << endl ;
-            cout << "    SUCCEED"                                                      << endl ;
+            cout << S4 << "SUCCEED"                                                    << endl ;
 
         } catch ( const exception &Error ) {
 
             cout << " @TestDB.insert_after( nullptr, new classCat( \"TestFail\" ) ) ;" << endl ;
-            cout << "    " << Error.what()                                             << endl ;
+            cout << S4 << Error.what()                                                 << endl ;
 
         }
 
@@ -153,22 +153,22 @@ void checkListModifying() {
             classNode* pTest = new classCat("Test" ) ;
             TestDB.insert_after( pTest, new classCat( "TestFail" ) ) ;
             cout << " @TestDB.insert_after( pTest, new classCat( \"TestFail\" ) ) ;" << endl ;
-            cout << "    SUCCEED"                                                    << endl ;
+            cout << S4 << "SUCCEED"                                                  << endl ;
 
         } catch ( const exception &Error ) {
 
             cout << " @TestDB.insert_after( pTest, new classCat( \"TestFail\" ) ) ;" << endl ;
-            cout << "    " << Error.what()                                           << endl ;
+            cout << S4 << Error.what()                                               << endl ;
 
         }
 
         try {
 
-            classNode* pTest0 = TestDB.get_first ()                     ;
+            classNode* pTest0 = TestDB.get_first ()         ;
             classNode* pTest1 = TestDB.get_next  ( pTest0 ) ;
             TestDB.insert_after( pTest0, pTest1 ) ;
             cout << " @TestDB.insert_after( pTest0, pTest1 ) ;" << endl ;
-            cout << "    SUCCEED"                               << endl ;
+            cout << S4 << "SUCCEED"                             << endl ;
 
         } catch ( const exception &Error ) {
 
@@ -249,42 +249,42 @@ void checkClassWeightGetters() {
 
     /// False and -1 ///
     cout << " @unknownWeight.isWeightKnown()"       << endl ;
-    cout << "    " << unknownWeight.isWeightKnown() << endl ;
+    cout << S4 << unknownWeight.isWeightKnown()     << endl ;
 
     cout << " @unknownWeight.hasMaxWeight()"        << endl ;
-    cout << "    " << unknownWeight.hasMaxWeight()  << endl ;
+    cout << S4 << unknownWeight.hasMaxWeight()      << endl ;
 
     cout << " @unknownWeight.getWeight()"           << endl ;
-    cout << "    " << unknownWeight.getWeight()     << endl ;
+    cout << S4 << unknownWeight.getWeight()         << endl ;
 
     cout << " @unknownWeight.unknownWeight.getWeight( classWeight::KILO )"   << endl ;
-    cout << "    " << unknownWeight.getWeight( classWeight::KILO ) << endl ;
+    cout << S4 << unknownWeight.getWeight( classWeight::KILO )     << endl ;
 
     cout << " @unknownWeight.getMaxWeight()"        << endl ;
-    cout << "    " << unknownWeight.getMaxWeight()  << endl ;
+    cout << S4 << unknownWeight.getMaxWeight()      << endl ;
 
     cout << " @unknownWeight.getWeightUnit()"       << endl ;
-    cout << "    " << unknownWeight.getWeightUnit() << endl ;
+    cout << S4 << unknownWeight.getWeightUnit()     << endl ;
     /// False and -1 ///
 
     /// True ///
     cout << " @knownWeight.isWeightKnown()"       << endl ;
-    cout << "    " << knownWeight.isWeightKnown() << endl ;
+    cout << S4 << knownWeight.isWeightKnown()     << endl ;
 
     cout << " @knownWeight.hasMaxWeight()"        << endl ;
-    cout << "    " << knownWeight.hasMaxWeight()  << endl ;
+    cout << S4 << knownWeight.hasMaxWeight()      << endl ;
 
     cout << " @knownWeight.getWeight()"           << endl ;
-    cout << "    " << knownWeight.getWeight()     << endl ;
+    cout << S4 << knownWeight.getWeight()         << endl ;
 
     cout << " @knownWeight.unknownWeight.getWeight( classWeight::SLUG )"   << endl ;
-    cout << "    " << knownWeight.getWeight( classWeight::SLUG ) << endl ;
+    cout << S4 << knownWeight.getWeight( classWeight::SLUG )     << endl ;
 
     cout << " @knownWeight.getMaxWeight()"        << endl ;
-    cout << "    " << knownWeight.getMaxWeight()  << endl ;
+    cout << S4 << knownWeight.getMaxWeight()      << endl ;
 
     cout << " @knownWeight.getWeightUnit()"       << endl ;
-    cout << "    " << knownWeight.getWeightUnit() << endl ;
+    cout << S4 << knownWeight.getWeightUnit()     << endl ;
     /// True ///
 
 }
@@ -302,12 +302,12 @@ void checkClassWeightSetters() {
 
         defaultWeight.setWeight( -1 ) ;
         cout << " @defaultWeight.setWeight( -1 ) ;" << endl ;
-        cout << "    SUCCEED"                       << endl ;
+        cout << S4 << "SUCCEED"                     << endl ;
 
     } catch ( const exception &Error ) {
 
         cout << " @defaultWeight.setWeight( -1 ) ;" << endl ;
-        cout << "    " << Error.what()              << endl ;
+        cout << S4 << Error.what()                  << endl ;
 
     }
 
@@ -315,12 +315,12 @@ void checkClassWeightSetters() {
 
         defaultWeight.setWeight( -1, classWeight::KILO ) ;
         cout << " @defaultWeight.setWeight( -1, classWeight::KILO ) ;" << endl ;
-        cout << "    SUCCEED"                       << endl ;
+        cout << S4 << "SUCCEED"                                        << endl ;
 
     } catch ( const exception &Error ) {
 
         cout << " @defaultWeight.setWeight( -1, classWeight::KILO ) ;" << endl ;
-        cout << "    " << Error.what()              << endl ;
+        cout << S4 << Error.what()                                     << endl ;
 
     }
     /// Fails ///
@@ -330,12 +330,12 @@ void checkClassWeightSetters() {
 
         defaultWeight.setWeight( 1 ) ;
         cout << " @defaultWeight.setWeight( 1 ) ;" << endl ;
-        cout << "    SUCCEED"                      << endl ;
+        cout << S4 << "SUCCEED"                    << endl ;
 
     } catch ( const exception &Error ) {
 
         cout << " @defaultWeight.setWeight( 1 ) ;" << endl ;
-        cout << "    " << Error.what()             << endl ;
+        cout << S4 << Error.what()                 << endl ;
 
     }
 
@@ -343,12 +343,12 @@ void checkClassWeightSetters() {
 
         defaultWeight.setWeight( 1, classWeight::KILO ) ;
         cout << " @defaultWeight.setWeight( 1, classWeight::KILO ) ;" << endl ;
-        cout << "    SUCCEED"                                         << endl ;
+        cout << S4 << "SUCCEED"                                       << endl ;
 
     } catch ( const exception &Error ) {
 
         cout << " @defaultWeight.setWeight( 1, classWeight::KILO ) ;" << endl ;
-        cout << "    " << Error.what()                                << endl ;
+        cout << S4 << Error.what()                                    << endl ;
 
     }
     /// Succeeds ///
@@ -372,11 +372,11 @@ void checkClassWeightEqualityOperator() {
 
     //True Statement
     cout << " @bool checkEqualityTrue  = ( testWeight1True  == testWeight2True  ) ;" << endl ;
-    cout << "    " << checkEqualityTrue                                              << endl ;
+    cout << S4 << checkEqualityTrue                                                  << endl ;
 
     //False Statement
     cout << " @bool checkEqualityFalse = ( testWeight1False == testWeight2False ) ;" << endl ;
-    cout << "    " << checkEqualityFalse                                             << endl ;
+    cout << S4 << checkEqualityFalse                                                 << endl ;
 
 }
 /// Checking Equality Operator ///
@@ -395,11 +395,11 @@ void checkClassWeightLessThanOperator() {
 
     //True Statement
     cout << " @bool checkLessThanTrue  = ( testWeight2Less < testWeight1More ) ;" << endl ;
-    cout << "    " << checkLessThanTrue                                           << endl ;
+    cout << S4 << checkLessThanTrue                                               << endl ;
 
     //False Statement
     cout << " @bool checkLessThanFalse = ( testWeight1More < testWeight2Less ) ;" << endl ;
-    cout << "    " << checkLessThanFalse                                          << endl ;
+    cout << S4 << checkLessThanFalse                                              << endl ;
 
 }
 /// Checking LessThan Operator ///
@@ -417,12 +417,12 @@ void checkClassWeightAddToOperator() {
 
         testWeight += 10.0 ;
         cout << " @testWeight += 10.0 ;" << endl ;
-        cout << "    SUCCEED"            << endl ;
+        cout << S4 << "SUCCEED"          << endl ;
 
     } catch ( exception const &Error ) {
 
         cout << " @testWeight += 10.0 ;" << endl ;
-        cout << "    " << Error.what()   << endl ;
+        cout << S4 << Error.what()       << endl ;
 
     }
 
@@ -431,12 +431,12 @@ void checkClassWeightAddToOperator() {
 
         testWeight += 9.0 ;
         cout << " @testWeight += 9.0 ;" << endl ;
-        cout << "    SUCCEED"           << endl ;
+        cout << S4 << "SUCCEED"         << endl ;
 
     } catch ( exception const &Error ) {
 
         cout << " @testWeight += 9.0 ;" << endl ;
-        cout << "    " << Error.what()  << endl ;
+        cout << S4 << Error.what()      << endl ;
 
     }
 
