@@ -29,25 +29,27 @@ inline ostream &operator<<( ostream &lhs_stream, const Color &rhs_Color ) {
 
     switch ( rhs_Color ) {
 
-        case Color::BLACK : lhs_stream << "Black" ;
+        case Color::UNKNOWN_COLOR : lhs_stream << "Unknown Color" ;
+
+        case Color::BLACK         : lhs_stream << "Black" ;
             break ;
 
-        case Color::BROWN : lhs_stream << "Brown" ;
+        case Color::BROWN         : lhs_stream << "Brown" ;
             break ;
 
-        case Color::WHITE : lhs_stream << "White" ;
+        case Color::WHITE         : lhs_stream << "White" ;
             break ;
 
-        case Color::RED   : lhs_stream << "Red"   ;
+        case Color::RED           : lhs_stream << "Red"   ;
             break ;
 
-        case Color::BLUE  : lhs_stream << "Blue"  ;
+        case Color::BLUE          : lhs_stream << "Blue"  ;
             break ;
 
-        case Color::GREEN : lhs_stream << "Green" ;
+        case Color::GREEN         : lhs_stream << "Green" ;
             break ;
 
-        case Color::PINK  : lhs_stream << "Pink"  ;
+        case Color::PINK          : lhs_stream << "Pink"  ;
             break ;
 
         default:

@@ -16,6 +16,11 @@
 #include "config.h"
 
 
+/// Debug for classList & classSinglyLinkedList ///
+void checkListModifying() ;
+/// Debug for classList & classSinglyLinkedList ///
+
+
 /// Debug for classWeight ///
 void checkClassWeightConstructor      () ;
 void checkClassWeightGetters          () ;

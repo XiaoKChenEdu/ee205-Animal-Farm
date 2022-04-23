@@ -17,8 +17,86 @@
 
 
 //////////////////////////////////////////////////////////////////////////////////////
+///////////////////// Debug for classList & classSinglyLinkedList ////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+/// Checking List Modifying ///
+void checkListModifying() {
+
+    classSinglyLinkedList TestDB ;
+
+    /// SUCCEED ///
+    try {
+
+        TestDB.push_front( new classCat( "Test" ) ) ;
+        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
+        cout << "    SUCCEED"                                       << endl ;
+
+    } catch ( const exception &Error ) {
+
+        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
+        cout << "    " << Error.what()                              << endl ;
+
+    }
+    /// SUCCEED ///
+
+    /// FAILS ///
+    try {
+
+        TestDB.push_front( new classCat( "Test" ) ) ;
+        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
+        cout << "    SUCCEED"                                       << endl ;
+
+    } catch ( const exception &Error ) {
+
+        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
+        cout << "    " << Error.what()                              << endl ;
+
+    }
+
+    try {
+
+        TestDB.push_front( nullptr ) ;
+        cout << " @TestDB.push_front( nullptr ) ;" << endl ;
+        cout << "    SUCCEED"                      << endl ;
+
+    } catch ( const exception &Error ) {
+
+        cout << " @TestDB.push_front( nullptr ) ;" << endl ;
+        cout << "    " << Error.what()             << endl ;
+
+    }
+
+    try {
+
+        TestDB.push_front( new classCat( "" ) ) ;
+        cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
+        cout << "    SUCCEED"                                   << endl ;
+
+    } catch ( const exception &Error ) {
+
+        cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
+        cout << "    " << Error.what()                          << endl ;
+
+    }
+
+    /// FAILS ///
+
+    TestDB.print() ;
+
+}
+/// Checking List Modifying ///
+
+//////////////////////////////////////////////////////////////////////////////////////
+///////////////////// Debug for classList & classSinglyLinkedList ////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Debug for classWeight ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
+
 /// Checking Constructor ///
 void checkClassWeightConstructor() {
 
@@ -270,6 +348,7 @@ void checkClassWeightAddToOperator() {
 
 }
 /// Checking AddTo Operator ///
+
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Debug for classWeight ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////

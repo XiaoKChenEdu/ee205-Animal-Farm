@@ -57,19 +57,22 @@ int main() {
         cout << "---- Debugging Starts Here ----" << endl;
         NL
 
-        /// Debug for classWeight ///
-        checkClassWeightConstructor      () ;
-        NL NL
-        checkClassWeightGetters          () ;
-        NL NL
-        checkClassWeightSetters          () ;
-        NL NL
-        checkClassWeightEqualityOperator () ;
-        NL NL
-        checkClassWeightLessThanOperator () ;
-        NL NL
-        checkClassWeightAddToOperator    () ;
-        /// Debug for classWeight ///
+
+        checkListModifying();
+
+//        /// Debug for classWeight ///
+//        checkClassWeightConstructor      () ;
+//        NL NL
+//        checkClassWeightGetters          () ;
+//        NL NL
+//        checkClassWeightSetters          () ;
+//        NL NL
+//        checkClassWeightEqualityOperator () ;
+//        NL NL
+//        checkClassWeightLessThanOperator () ;
+//        NL NL
+//        checkClassWeightAddToOperator    () ;
+//        /// Debug for classWeight ///
 
         NL
         cout << "----- Debugging Ends Here -----" << endl;
