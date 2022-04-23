@@ -58,20 +58,24 @@ int main() {
         NL
 
 
-        checkListModifying();
+        /// debug for classList & classSinglyLinkedList ///
+            checkListProperty();
+            NL NL
+            //checkListModifying () ;
+        /// debug for classList & classSinglyLinkedList ///
 
-//        /// Debug for classWeight ///
-//        checkClassWeightConstructor      () ;
-//        NL NL
-//        checkClassWeightGetters          () ;
-//        NL NL
-//        checkClassWeightSetters          () ;
-//        NL NL
-//        checkClassWeightEqualityOperator () ;
-//        NL NL
-//        checkClassWeightLessThanOperator () ;
-//        NL NL
-//        checkClassWeightAddToOperator    () ;
+//        /// debug for classWeight ///
+//          checkClassWeightConstructor      () ;
+//          NL NL
+//          checkClassWeightGetters          () ;
+//          NL NL
+//          checkClassWeightSetters          () ;
+//          NL NL
+//          checkClassWeightEqualityOperator () ;
+//           NL NL
+//          checkClassWeightLessThanOperator () ;
+//          NL NL
+//          checkClassWeightAddToOperator    () ;
 //        /// Debug for classWeight ///
 
         NL

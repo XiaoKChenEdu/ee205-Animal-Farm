@@ -15,75 +15,169 @@
 #include "classSinglyLinkedList.h"
 #include "classCat.h"
 
+#define S4 "    "
+
 
 //////////////////////////////////////////////////////////////////////////////////////
 ///////////////////// Debug for classList & classSinglyLinkedList ////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
+
+/// Checking List Property ///
+void checkListProperty() {
+
+    classSinglyLinkedList TestDB ;
+
+    /// checking if list is empty & list count & isSorted ///
+    cout << " @TestDB.empty()"      << endl ;
+    cout << S4 << TestDB.empty()    << endl ;
+    cout << " @TestDB.size()"       << endl ;
+    cout << S4 << TestDB.size()     << endl ;
+    cout << " @TestDB.isSorted()"   << endl ;
+    cout << S4 << TestDB.isSorted() << endl ;
+
+    TestDB.push_front( new classCat( "Test0" ) ) ;
+    TestDB.push_front( new classCat( "Test1" ) ) ;
+
+    cout << " @TestDB.empty()"      << endl ;
+    cout << S4 << TestDB.empty()    << endl ;
+    cout << " @TestDB.size()"       << endl ;
+    cout << S4 << TestDB.size()     << endl ;
+    cout << " @TestDB.isSorted()"   << endl ;
+    cout << S4 << TestDB.isSorted() << endl ;
+    /// checking if list is empty & list count ///
+
+    /// checking if a node is in list ///
+
+    /// checking if a node is in list ///
+
+}
+/// Checking List Property ///
 
 /// Checking List Modifying ///
 void checkListModifying() {
 
     classSinglyLinkedList TestDB ;
 
-    /// SUCCEED ///
-    try {
+    /// push_front test ///
+        /// SUCCEED ///
+        try {
 
-        TestDB.push_front( new classCat( "Test" ) ) ;
-        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
-        cout << "    SUCCEED"                                       << endl ;
+            TestDB.push_front( new classCat( "Test0" ) ) ;
+            cout << " @TestDB.push_front( new classCat( \"Test0\" ) ) ;" << endl ;
+            cout << S4 << "SUCCEED"                                      << endl ;
 
-    } catch ( const exception &Error ) {
+        } catch ( const exception &Error ) {
 
-        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
-        cout << "    " << Error.what()                              << endl ;
+            cout << " @TestDB.push_front( new classCat( \"Test0\" ) ) ;" << endl ;
+            cout << S4 << Error.what()                                   << endl ;
 
-    }
-    /// SUCCEED ///
+        }
+        /// SUCCEED ///
 
-    /// FAILS ///
-    try {
+        /// FAILS ///
+        try {
 
-        TestDB.push_front( new classCat( "Test" ) ) ;
-        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
-        cout << "    SUCCEED"                                       << endl ;
+            classNode* pTest0 = TestDB.get_first() ;
+            TestDB.push_front( pTest0 ) ;
+            cout << " @TestDB.push_front( pTest0 ) ;" << endl ;
+            cout << "    SUCCEED"                     << endl ;
 
-    } catch ( const exception &Error ) {
+        } catch ( const exception &Error ) {
 
-        cout << " @TestDB.push_front( new classCat( \"Test\" ) ) ;" << endl ;
-        cout << "    " << Error.what()                              << endl ;
+            cout << " @TestDB.push_front( pTest0 ) ;" << endl ;
+            cout << "    " << Error.what()            << endl ;
 
-    }
+        }
 
-    try {
+        try {
 
-        TestDB.push_front( nullptr ) ;
-        cout << " @TestDB.push_front( nullptr ) ;" << endl ;
-        cout << "    SUCCEED"                      << endl ;
+            TestDB.push_front( nullptr ) ;
+            cout << " @TestDB.push_front( nullptr ) ;" << endl ;
+            cout << "    SUCCEED"                      << endl ;
 
-    } catch ( const exception &Error ) {
+        } catch ( const exception &Error ) {
 
-        cout << " @TestDB.push_front( nullptr ) ;" << endl ;
-        cout << "    " << Error.what()             << endl ;
+            cout << " @TestDB.push_front( nullptr ) ;" << endl ;
+            cout << "    " << Error.what()             << endl ;
 
-    }
+        }
 
-    try {
+        try {
 
-        TestDB.push_front( new classCat( "" ) ) ;
-        cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
-        cout << "    SUCCEED"                                   << endl ;
+            TestDB.push_front( new classCat( "" ) ) ;
+            cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
+            cout << "    SUCCEED"                                   << endl ;
 
-    } catch ( const exception &Error ) {
+        } catch ( const exception &Error ) {
 
-        cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
-        cout << "    " << Error.what()                          << endl ;
+            cout << " @TestDB.push_front( new classCat( \"\" ) ) ;" << endl ;
+            cout << "    " << Error.what()                          << endl ;
 
-    }
+        }
+        /// FAILS ///
+    /// push_front test ///
 
-    /// FAILS ///
+    /// insert_after test ///
+        /// SUCCEED ///
+        try {
 
-    TestDB.print() ;
+            classNode* pTest0 = TestDB.get_first() ;
+            TestDB.insert_after( pTest0, new classCat( "Test1" ) ) ;
+            cout << " @TestDB.insert_after( pTest0, new classCat( \"Test1\" ) ) ;" << endl ;
+            cout << "    SUCCEED"                                                  << endl ;
 
+        } catch ( const exception &Error ) {
+
+            cout << " @TestDB.insert_after( pTest0, new classCat( \"Test1\" ) ) ;" << endl ;
+            cout << "    " << Error.what()                                         << endl ;
+
+        }
+        /// SUCCEED ///
+
+        /// FAILS ///
+        try {
+
+            TestDB.insert_after( nullptr, new classCat( "TestFail" ) ) ;
+            cout << " @TestDB.insert_after( nullptr, new classCat( \"TestFail\" ) ) ;" << endl ;
+            cout << "    SUCCEED"                                                      << endl ;
+
+        } catch ( const exception &Error ) {
+
+            cout << " @TestDB.insert_after( nullptr, new classCat( \"TestFail\" ) ) ;" << endl ;
+            cout << "    " << Error.what()                                             << endl ;
+
+        }
+
+        try {
+
+            classNode* pTest = new classCat("Test" ) ;
+            TestDB.insert_after( pTest, new classCat( "TestFail" ) ) ;
+            cout << " @TestDB.insert_after( pTest, new classCat( \"TestFail\" ) ) ;" << endl ;
+            cout << "    SUCCEED"                                                    << endl ;
+
+        } catch ( const exception &Error ) {
+
+            cout << " @TestDB.insert_after( pTest, new classCat( \"TestFail\" ) ) ;" << endl ;
+            cout << "    " << Error.what()                                           << endl ;
+
+        }
+
+        try {
+
+            classNode* pTest0 = TestDB.get_first ()                     ;
+            classNode* pTest1 = TestDB.get_next  ( pTest0 ) ;
+            TestDB.insert_after( pTest0, pTest1 ) ;
+            cout << " @TestDB.insert_after( pTest0, pTest1 ) ;" << endl ;
+            cout << "    SUCCEED"                               << endl ;
+
+        } catch ( const exception &Error ) {
+
+            cout << " @TestDB.insert_after( pTest0, pTest1 ) ;" << endl ;
+            cout << "    " << Error.what()                      << endl ;
+
+        }
+        /// FAILS ///
+    /// insert_after test ///
 }
 /// Checking List Modifying ///
 
@@ -100,47 +194,47 @@ void checkListModifying() {
 /// Checking Constructor ///
 void checkClassWeightConstructor() {
 
-    ///Test for the first constructor ///
-    classWeight testConstructor1;
-    cout << " @classWeight testConstructor1;" << endl ;
-    testConstructor1.debugPrint();
-    ///Test for the first constructor ///
+    /// Test for the first constructor ///
+        classWeight testConstructor1;
+        cout << " @classWeight testConstructor1;" << endl ;
+        testConstructor1.debugPrint();
+    /// Test for the first constructor ///
 
-    ///Test for the second constructor ///
-    classWeight testConstructor2( 10.0 ) ;
-    cout << " @classWeight testConstructor2( 10.0 ) ;" << endl ;
-    testConstructor2.debugPrint();
-    ///Test for the second constructor ///
+    /// Test for the second constructor ///
+        classWeight testConstructor2( 10.0 ) ;
+        cout << " @classWeight testConstructor2( 10.0 ) ;" << endl ;
+        testConstructor2.debugPrint();
+    /// Test for the second constructor ///
 
-    ///Test for the third constructor ///
-    classWeight testConstructor3( classWeight::KILO ) ;
-    cout << " @classWeight testConstructor3( classWeight::KILO ) ;" << endl ;
-    testConstructor3.debugPrint();
-    ///Test for the third constructor ///
+    /// Test for the third constructor ///
+        classWeight testConstructor3( classWeight::KILO ) ;
+        cout << " @classWeight testConstructor3( classWeight::KILO ) ;" << endl ;
+        testConstructor3.debugPrint();
+    /// Test for the third constructor ///
 
-    ///Test for the four constructor ///
-    classWeight testConstructor4( 10.0, classWeight::SLUG ) ;
-    cout << " @classWeight testConstructor4( 10.0, classWeight::SLUG ) ;" << endl ;
-    testConstructor4.debugPrint();
-    ///Test for the four constructor ///
+    /// Test for the four constructor ///
+        classWeight testConstructor4( 10.0, classWeight::SLUG ) ;
+        cout << " @classWeight testConstructor4( 10.0, classWeight::SLUG ) ;" << endl ;
+        testConstructor4.debugPrint();
+    /// Test for the four constructor ///
 
-    ///Test for the fifth constructor ///
-    classWeight testConstructor5( 10.0, 100.0 ) ;
-    cout << " @classWeight testConstructor5( 10.0, 100.0 ) ;" << endl ;
-    testConstructor5.debugPrint();
-    ///Test for the fifth constructor ///
+    /// Test for the fifth constructor ///
+        classWeight testConstructor5( 10.0, 100.0 ) ;
+        cout << " @classWeight testConstructor5( 10.0, 100.0 ) ;" << endl ;
+        testConstructor5.debugPrint();
+    /// Test for the fifth constructor ///
 
-    ///Test for the sixth constructor ///
-    classWeight testConstructor6( classWeight::KILO, 100.0 ) ;
-    cout << " @classWeight testConstructor6( classWeight::KILO, 100.0 ) ;" << endl ;
-    testConstructor6.debugPrint();
-    ///Test for the sixth constructor ///
+    /// Test for the sixth constructor ///
+        classWeight testConstructor6( classWeight::KILO, 100.0 ) ;
+        cout << " @classWeight testConstructor6( classWeight::KILO, 100.0 ) ;" << endl ;
+        testConstructor6.debugPrint();
+    /// Test for the sixth constructor ///
 
-    ///Test for the seventh constructor ///
-    classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;
-    cout << " @classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;" << endl ;
-    testConstructor7.debugPrint();
-    ///Test for the seventh constructor ///
+    /// Test for the seventh constructor ///
+        classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;
+        cout << " @classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;" << endl ;
+        testConstructor7.debugPrint();
+    /// Test for the seventh constructor ///
 
 }
 /// Checking Constructor ///

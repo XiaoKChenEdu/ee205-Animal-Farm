@@ -85,9 +85,15 @@ bool classList::isSorted() const noexcept {
 
     assert( validate() ) ;
 
-    for ( classNode* pI; pI -> pNext != nullptr; pI = pI -> pNext ) {
+    if ( count <= 1 ) {
 
-        if ( pI > pI -> pNext ) {
+        return true ;
+
+    }
+
+    for ( classNode* pI = pHead; pI -> pNext != nullptr; pI = pI -> pNext ) {
+
+        if ( *pI > *pI -> pNext ) {
 
             return false ;
 

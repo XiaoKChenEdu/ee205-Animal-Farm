@@ -30,6 +30,7 @@ inline ostream &operator<<( ostream &lhs_stream, const Color &rhs_Color ) {
     switch ( rhs_Color ) {
 
         case Color::UNKNOWN_COLOR : lhs_stream << "Unknown Color" ;
+            break ;
 
         case Color::BLACK         : lhs_stream << "Black" ;
             break ;

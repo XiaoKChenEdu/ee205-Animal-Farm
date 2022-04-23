@@ -17,6 +17,7 @@
 
 
 /// Debug for classList & classSinglyLinkedList ///
+void checkListProperty() ;
 void checkListModifying() ;
 /// Debug for classList & classSinglyLinkedList ///
 

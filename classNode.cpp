@@ -72,13 +72,7 @@ bool classNode::validate() const noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 bool classNode::operator>( const classNode &RightSide ) {
 
-    if ( this > &RightSide ) {
-
-        return true ;
-
-    }
-
-    return false ;
+    return compareByAddress( this, &(classNode&)RightSide ) ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
