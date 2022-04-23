@@ -13,8 +13,9 @@
 #include "config.h"
 #include "classSinglyLinkedList.h"
 #include "classCat.h"
+#include "debug.h"
 
-//#define DEBUG
+#define DEBUG
 #define NL           cout << endl;
 
 
@@ -39,7 +40,7 @@ int main() {
 
     }
 
-    NL
+    NL NL
 
     catDB.validate       () ;
     catDB.print          () ;
@@ -56,7 +57,19 @@ int main() {
         cout << "---- Debugging Starts Here ----" << endl;
         NL
 
-
+        /// Debug for classWeight ///
+        checkClassWeightConstructor      () ;
+        NL NL
+        checkClassWeightGetters          () ;
+        NL NL
+        checkClassWeightSetters          () ;
+        NL NL
+        checkClassWeightEqualityOperator () ;
+        NL NL
+        checkClassWeightLessThanOperator () ;
+        NL NL
+        checkClassWeightAddToOperator    () ;
+        /// Debug for classWeight ///
 
         NL
         cout << "----- Debugging Ends Here -----" << endl;

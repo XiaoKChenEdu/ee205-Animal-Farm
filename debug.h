@@ -14,3 +14,13 @@
 
 
 #include "config.h"
+
+
+/// Debug for classWeight ///
+void checkClassWeightConstructor      () ;
+void checkClassWeightGetters          () ;
+void checkClassWeightSetters          () ;
+void checkClassWeightEqualityOperator () ;
+void checkClassWeightLessThanOperator () ;
+void checkClassWeightAddToOperator    () ;
+/// Debug for classWeight ///
