@@ -177,6 +177,10 @@ bool classAnimal::validateSpecies(const string &checkSpecies) noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 void classAnimal::print() const noexcept {
 
+    PRINT_HEADING_FOR_PRINT ;
+
+    classNode::print() ;
+
     FORMAT_LINE_FOR_PRINT( "Animal", "this"           ) << this           << endl ;
     FORMAT_LINE_FOR_PRINT( "Animal", "Kingdom"        ) << KINGDOM_NAME   << endl ;
     FORMAT_LINE_FOR_PRINT( "Animal", "Classification" ) << classification << endl ;

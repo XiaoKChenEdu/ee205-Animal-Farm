@@ -12,6 +12,7 @@
 
 #include "config.h"
 #include "classSinglyLinkedList.h"
+#include "classCat.h"
 
 //#define DEBUG
 #define NL           cout << endl;
@@ -21,6 +22,12 @@ int main() {
 
     cout << "---- Starting Program Animal Farm ----" << endl;
     NL
+
+    classSinglyLinkedList catDB;
+
+    catDB.push_front( new classCat( "Loki", Color::WHITE, true, Gender::MALE, 1.0 ) );
+
+    catDB.print() ;
 
     //////////////////////// Debug Starts Here ////////////////////////
     #ifdef DEBUG

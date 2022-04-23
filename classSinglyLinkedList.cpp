@@ -59,8 +59,8 @@ void classSinglyLinkedList::push_front( classNode* pNewNode ) {
 
     }
 
-    assert( validate() ) ;
     count++ ;
+    assert( validate() ) ;
 
 }
 
@@ -148,8 +148,13 @@ classNode *classSinglyLinkedList::pop_front() noexcept {
 //////////////////////////////////////////////////////////////////////////////////////
 void classSinglyLinkedList::print() const noexcept {
 
-    // @todo a bit confused while do it later.
+    cout << "classSinglyLinkedList:   head=[" << pHead << "]" << endl ;
 
+    for ( classNode* pI = pHead; pI != nullptr; pI = pI -> pNext ) {
+
+        pI -> print() ;
+
+    }
 
 }
 
