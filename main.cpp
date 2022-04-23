@@ -59,9 +59,9 @@ int main() {
 
 
         /// debug for classList & classSinglyLinkedList ///
-            checkListProperty();
+            checkListProperty() ;
             NL NL
-            checkListModifying () ;
+//            checkListModifying () ;
         /// debug for classList & classSinglyLinkedList ///
 
 //        /// debug for classWeight ///

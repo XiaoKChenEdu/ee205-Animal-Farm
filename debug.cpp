@@ -28,26 +28,35 @@ void checkListProperty() {
     classSinglyLinkedList TestDB ;
 
     /// checking if list is empty & list count & isSorted ///
-    cout << " @TestDB.empty()"      << endl ;
-    cout << S4 << TestDB.empty()    << endl ;
-    cout << " @TestDB.size()"       << endl ;
-    cout << S4 << TestDB.size()     << endl ;
-    cout << " @TestDB.isSorted()"   << endl ;
-    cout << S4 << TestDB.isSorted() << endl ;
+        cout << " @TestDB.empty()"      << endl ;
+        cout << S4 << TestDB.empty()    << endl ;
+        cout << " @TestDB.size()"       << endl ;
+        cout << S4 << TestDB.size()     << endl ;
+        cout << " @TestDB.isSorted()"   << endl ;
+        cout << S4 << TestDB.isSorted() << endl ;
 
-    TestDB.push_front( new classCat( "Test0" ) ) ;
-    TestDB.push_front( new classCat( "Test1" ) ) ;
+        TestDB.push_front( new classCat( "Test0" ) ) ;
+        TestDB.push_front( new classCat( "Test1" ) ) ;
 
-    cout << " @TestDB.empty()"      << endl ;
-    cout << S4 << TestDB.empty()    << endl ;
-    cout << " @TestDB.size()"       << endl ;
-    cout << S4 << TestDB.size()     << endl ;
-    cout << " @TestDB.isSorted()"   << endl ;
-    cout << S4 << TestDB.isSorted() << endl ;    //@todo: fix bug for isSorted
+        cout << " @TestDB.empty()"      << endl ;
+        cout << S4 << TestDB.empty()    << endl ;
+        cout << " @TestDB.size()"       << endl ;
+        cout << S4 << TestDB.size()     << endl ;
+        cout << " @TestDB.isSorted()"   << endl ;
+        cout << S4 << TestDB.isSorted() << endl ;
+
+        TestDB.pop_front() ;
+        classNode* pTest0 = TestDB.get_first() ;
+        TestDB.insert_after( pTest0, new classCat( "Test1" ) ) ;
+
+        cout << " @TestDB.isSorted()"   << endl ;
+        cout << S4 << TestDB.isSorted() << endl ;
     /// checking if list is empty & list count ///
 
     /// checking if a node is in list ///
+        /// SUCCEED ///
 
+        /// SUCCEED ///
     /// checking if a node is in list ///
 
 }
