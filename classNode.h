@@ -44,4 +44,9 @@ class classNode {
         virtual bool operator> ( const classNode &RightSide ) ;
         /// Operators ///
 
+    public:
+        /// Debug Print ///
+        virtual void debugPrint () const ;
+        /// Debug Print ///
+
 } ;

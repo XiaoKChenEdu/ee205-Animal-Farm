@@ -15,8 +15,6 @@
 #include "classSinglyLinkedList.h"
 #include "classCat.h"
 
-#define S4 "    "
-
 
 //////////////////////////////////////////////////////////////////////////////////////
 ///////////////////// Debug for classList & classSinglyLinkedList ////////////////////
@@ -217,53 +215,97 @@ void checkListModifying() {
 
 
 //////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Debug for classAnimal ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+/// Checking Constructor ///
+void checkClassAnimalConstructor() {
+
+    class classAnimalTest : public classAnimal {
+
+        public:
+            classAnimalTest( const classWeight::t_weight newMaxWeight, const string &NewClassification, const string &NewSpecies ) : classAnimal( newMaxWeight, NewClassification, NewSpecies ) {} ;
+
+            classAnimalTest( const Gender newGender, const classWeight::t_weight newWeight, const classWeight::t_weight newMaxWeight, const string &NewClassification, const string &NewSpecies ) : classAnimal( newGender, newWeight, newMaxWeight, NewClassification, NewSpecies ) {} ;
+
+            string speak() const noexcept override {
+
+                return "Test" ;
+
+            }
+
+    } ;
+
+    /// test for the first constructor ///
+        classAnimalTest Test0( 10.0, "TestClassification0", "TestSpecies0" ) ;
+        cout << R"( @classAnimalTest Test0( 10.0, "TestClassification0", "TestSpecies0" ) ;)" << endl ;
+        Test0.setWeight  ( 1.0 ) ;
+        Test0.debugPrint ()      ;
+    /// test for the first constructor ///
+
+    /// test for the second constructor ///
+        classAnimalTest Test1( Gender::MALE, 2.0, 20.0, "TestClassification1", "TestSpecies1" ) ;
+        cout << R"( @classAnimalTest Test1( Gender::MALE, 2.0, 20.0, "TestClassification1", "TestSpecies1" ) ;)" << endl ;
+        Test1.debugPrint() ;
+    /// test for the second constructor ///
+
+}
+/// Checking Constructor ///
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Debug for classAnimal ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Debug for classWeight ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
 /// Checking Constructor ///
 void checkClassWeightConstructor() {
 
-    /// Test for the first constructor ///
+    /// test for the first constructor ///
         classWeight testConstructor1;
         cout << " @classWeight testConstructor1;" << endl ;
         testConstructor1.debugPrint();
-    /// Test for the first constructor ///
+    /// test for the first constructor ///
 
-    /// Test for the second constructor ///
+    /// test for the second constructor ///
         classWeight testConstructor2( 10.0 ) ;
         cout << " @classWeight testConstructor2( 10.0 ) ;" << endl ;
         testConstructor2.debugPrint();
-    /// Test for the second constructor ///
+    /// test for the second constructor ///
 
-    /// Test for the third constructor ///
+    /// test for the third constructor ///
         classWeight testConstructor3( classWeight::KILO ) ;
         cout << " @classWeight testConstructor3( classWeight::KILO ) ;" << endl ;
         testConstructor3.debugPrint();
-    /// Test for the third constructor ///
+    /// test for the third constructor ///
 
-    /// Test for the four constructor ///
+    /// test for the four constructor ///
         classWeight testConstructor4( 10.0, classWeight::SLUG ) ;
         cout << " @classWeight testConstructor4( 10.0, classWeight::SLUG ) ;" << endl ;
         testConstructor4.debugPrint();
-    /// Test for the four constructor ///
+    /// test for the four constructor ///
 
-    /// Test for the fifth constructor ///
+    /// test for the fifth constructor ///
         classWeight testConstructor5( 10.0, 100.0 ) ;
         cout << " @classWeight testConstructor5( 10.0, 100.0 ) ;" << endl ;
         testConstructor5.debugPrint();
-    /// Test for the fifth constructor ///
+    /// test for the fifth constructor ///
 
-    /// Test for the sixth constructor ///
+    /// test for the sixth constructor ///
         classWeight testConstructor6( classWeight::KILO, 100.0 ) ;
         cout << " @classWeight testConstructor6( classWeight::KILO, 100.0 ) ;" << endl ;
         testConstructor6.debugPrint();
-    /// Test for the sixth constructor ///
+    /// test for the sixth constructor ///
 
-    /// Test for the seventh constructor ///
+    /// test for the seventh constructor ///
         classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;
         cout << " @classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;" << endl ;
         testConstructor7.debugPrint();
-    /// Test for the seventh constructor ///
+    /// test for the seventh constructor ///
 
 }
 /// Checking Constructor ///

@@ -58,11 +58,16 @@ int main() {
         NL
 
 
-        /// debug for classList & classSinglyLinkedList ///
-            checkListProperty() ;
-            NL NL
+//        /// debug for classList & classSinglyLinkedList ///
+//            checkListProperty() ;
+//            NL NL
 //            checkListModifying () ;
-        /// debug for classList & classSinglyLinkedList ///
+//            NL NL
+//        /// debug for classList & classSinglyLinkedList ///
+
+        /// debug for classAnimal ///
+            checkClassAnimalConstructor() ;
+        /// debug for classAnimal ///
 
 //        /// debug for classWeight ///
 //          checkClassWeightConstructor      () ;

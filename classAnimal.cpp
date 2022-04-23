@@ -181,12 +181,12 @@ void classAnimal::print() const noexcept {
 
     classNode::print() ;
 
-    FORMAT_LINE_FOR_PRINT( "Animal", "this"           ) << this           << endl ;
-    FORMAT_LINE_FOR_PRINT( "Animal", "Kingdom"        ) << KINGDOM_NAME   << endl ;
-    FORMAT_LINE_FOR_PRINT( "Animal", "Classification" ) << classification << endl ;
-    FORMAT_LINE_FOR_PRINT( "Animal", "Species"        ) << species        << endl ;
-    FORMAT_LINE_FOR_PRINT( "Animal", "Gender"         ) << gender         << endl ;
-    FORMAT_LINE_FOR_PRINT( "Animal", "Weight"         ) << weight         << endl ;
+    FORMAT_LINE_FOR_PRINT("Animal", "this"           ) << this << endl ;
+    FORMAT_LINE_FOR_PRINT("Animal", "Kingdom"        ) << KINGDOM_NAME << endl ;
+    FORMAT_LINE_FOR_PRINT("Animal", "Classification" ) << classification << endl ;
+    FORMAT_LINE_FOR_PRINT("Animal", "Species"        ) << species << endl ;
+    FORMAT_LINE_FOR_PRINT("Animal", "Gender"         ) << gender << endl ;
+    FORMAT_LINE_FOR_PRINT("Animal", "Weight"         ) << weight << endl ;
 
 }
 
@@ -203,4 +203,27 @@ bool classAnimal::validate() const noexcept {
 }
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Validation & Print //////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// Debug Print //////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+void classAnimal::debugPrint() const noexcept {
+
+    PRINT_HEADING_FOR_DEBUG_PRINT ;
+
+    classNode::debugPrint() ;
+
+    FORMAT_LINE_FOR_DEBUG_PRINT("Animal", "this"           ) << this << endl ;
+    FORMAT_LINE_FOR_DEBUG_PRINT("Animal", "Kingdom"        ) << KINGDOM_NAME << endl ;
+    FORMAT_LINE_FOR_DEBUG_PRINT("Animal", "Classification" ) << classification << endl ;
+    FORMAT_LINE_FOR_DEBUG_PRINT("Animal", "Species"        ) << species << endl ;
+    FORMAT_LINE_FOR_DEBUG_PRINT("Animal", "Gender"         ) << gender << endl ;
+    FORMAT_LINE_FOR_DEBUG_PRINT("Animal", "Weight"         ) << weight << endl ;
+
+}
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// Debug Print //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////

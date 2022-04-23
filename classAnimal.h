@@ -82,4 +82,9 @@ class classAnimal : public classNode {
         virtual string speak() const noexcept = 0 ;
         /// Abstract Function ///
 
+    public:
+        /// Debug Print ///
+        void debugPrint () const noexcept override ;
+        /// Debug Print ///
+
 } ;

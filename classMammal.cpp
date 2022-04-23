@@ -55,7 +55,7 @@ void classMammal::print() const noexcept {
 
     classAnimal::print() ;
 
-    FORMAT_LINE_FOR_PRINT( "Mammal", "Color" ) << color << endl ;
+    FORMAT_LINE_FOR_PRINT("Mammal", "Color" ) << color << endl ;
 
 }
 //////////////////////////////////////////////////////////////////////////////////////

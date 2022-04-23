@@ -19,14 +19,13 @@
 #include <iomanip>
 #include <cassert>
 
+#define S4 "    "
 #define PROGRAM_NAME "Animal Farm"
 
-/// Format the heading for dumping members of a class to the console
-///
-/// Print =====================
 #define PRINT_HEADING_FOR_PRINT cout << setw(80) << setfill( '=' ) << "" << endl
-/// Format a line for dumping the members of a class to the console.
-/// Setup the fields for printing (space pad, left justify, etc.)
 #define FORMAT_LINE_FOR_PRINT( className, member ) cout << setfill( ' ' ) << left << boolalpha << setw(8)  << (className) << setw(20) << (member) << setw(52)
+
+#define PRINT_HEADING_FOR_DEBUG_PRINT cout << S4 << setw(80) << setfill( '=' ) << "" << endl
+#define FORMAT_LINE_FOR_DEBUG_PRINT( className, member ) cout << S4 << setfill( ' ' ) << left << boolalpha << setw(8)  << (className) << setw(20) << (member) << setw(52)
 
 using namespace std;

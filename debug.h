@@ -21,6 +21,9 @@ void checkListProperty() ;
 void checkListModifying() ;
 /// Debug for classList & classSinglyLinkedList ///
 
+/// Debug for classAnimal ///
+void checkClassAnimalConstructor() ;
+/// Debug for classAnimal ///
 
 /// Debug for classWeight ///
 void checkClassWeightConstructor      () ;

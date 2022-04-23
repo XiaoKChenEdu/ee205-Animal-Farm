@@ -136,8 +136,8 @@ void classCat::print() const noexcept {
 
     classMammal::print() ;
 
-    FORMAT_LINE_FOR_PRINT( "Cat", "Name"    ) << getName() << endl ;
-    FORMAT_LINE_FOR_PRINT( "Cat", "IsFixed" ) << isFixed() << endl ;
+    FORMAT_LINE_FOR_PRINT("Cat", "Name"    ) << getName() << endl ;
+    FORMAT_LINE_FOR_PRINT("Cat", "IsFixed" ) << isFixed() << endl ;
 
 }
 
