@@ -58,30 +58,36 @@ int main() {
         NL
 
 
-//        /// debug for classList & classSinglyLinkedList ///
-//            checkListProperty() ;
-//            NL NL
-//            checkListModifying () ;
-//            NL NL
-//        /// debug for classList & classSinglyLinkedList ///
+        /// debug for classList & classSinglyLinkedList ///
+            checkListProperty() ;
+            NL NL
+            checkListModifying () ;
+            NL NL
+        /// debug for classList & classSinglyLinkedList ///
 
         /// debug for classAnimal ///
             checkClassAnimalConstructor() ;
+            NL NL
         /// debug for classAnimal ///
 
-//        /// debug for classWeight ///
-//          checkClassWeightConstructor      () ;
-//          NL NL
-//          checkClassWeightGetters          () ;
-//          NL NL
-//          checkClassWeightSetters          () ;
-//          NL NL
-//          checkClassWeightEqualityOperator () ;
-//           NL NL
-//          checkClassWeightLessThanOperator () ;
-//          NL NL
-//          checkClassWeightAddToOperator    () ;
-//        /// Debug for classWeight ///
+        /// debug for classCat ///
+            checkClassCatConstructor() ;
+            NL NL
+        /// debug for classCat ///
+
+        /// debug for classWeight ///
+          checkClassWeightConstructor      () ;
+          NL NL
+          checkClassWeightGetters          () ;
+          NL NL
+          checkClassWeightSetters          () ;
+          NL NL
+          checkClassWeightEqualityOperator () ;
+          NL NL
+          checkClassWeightLessThanOperator () ;
+          NL NL
+          checkClassWeightAddToOperator    () ;
+        /// Debug for classWeight ///
 
         NL
         cout << "----- Debugging Ends Here -----" << endl;

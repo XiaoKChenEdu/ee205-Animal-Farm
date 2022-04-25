@@ -64,4 +64,9 @@ class classCat : public classMammal {
         bool   validate () const noexcept override ;
         /// Validation & Print ///
 
+    public:
+        /// Debug Print ///
+        void debugPrint() const noexcept override ;
+        /// Debug Print ///
+
 };

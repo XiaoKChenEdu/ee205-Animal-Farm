@@ -17,13 +17,17 @@
 
 
 /// Debug for classList & classSinglyLinkedList ///
-void checkListProperty() ;
-void checkListModifying() ;
+void checkListProperty                () ;
+void checkListModifying               () ;
 /// Debug for classList & classSinglyLinkedList ///
 
 /// Debug for classAnimal ///
-void checkClassAnimalConstructor() ;
+void checkClassAnimalConstructor      () ;
 /// Debug for classAnimal ///
+
+/// debug for classCat ///
+void checkClassCatConstructor         () ;
+/// debug for classCat ///
 
 /// Debug for classWeight ///
 void checkClassWeightConstructor      () ;

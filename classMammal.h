@@ -63,4 +63,9 @@ class classMammal : public classAnimal {
         void print() const noexcept override ;
         /// Print ///
 
+    public:
+        /// Debug Print ///
+        void debugPrint() const noexcept override ;
+        /// Debug Print ///
+
 } ;
