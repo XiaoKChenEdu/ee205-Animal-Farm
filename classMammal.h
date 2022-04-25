@@ -3,7 +3,7 @@
 /// @brief  ee205-Animal-Farm - EE 205 - Spr 2022
 ///
 /// @file classMammal.h
-/// @version 1.0
+/// @version 3.0
 ///
 /// @author Xiaokang Chen <xiaokang@hawaii.edu>
 /// @date   20_Apr_2022

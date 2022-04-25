@@ -3,7 +3,7 @@
 /// @brief  ee205_lab12a_fatCat - EE 205 - Spr 2022
 ///
 /// @file classWeight.cpp
-/// @version 1.0
+/// @version 3.0
 ///
 /// @author Xiaokang Chen <xiaokang@hawaii.edu>
 /// @date   14_Apr_2022
