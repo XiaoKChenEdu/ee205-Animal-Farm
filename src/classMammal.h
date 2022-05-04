@@ -21,17 +21,17 @@
 class classMammal : public classAnimal {
 
     protected:
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
         Color color = Color::UNKNOWN_COLOR ;
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
 
     public:
-        /// Static Public Attributes ///
+    ///// Static Public Attributes /////
         static const string MAMMAL_NAME ;
-        /// Static Public Attributes ///
+    ///// Static Public Attributes /////
 
     public:
-        /// Constructor ///
+    ///// Constructor /////
         classMammal( const classWeight::t_weight newMaxWeight,
                      const string                &NewSpecies   ) : classAnimal( newMaxWeight,
                                                                                 MAMMAL_NAME,
@@ -47,25 +47,25 @@ class classMammal : public classAnimal {
                                                                                 NewSpecies    ) {
                                                                                                             setColor( newColor ) ;
                                                                                                             } ;
-        /// Constructor ///
+    ///// Constructor /////
 
     public:
-        /// Getter ///
+    ///// Getter /////
         Color getColor() const noexcept ;
-        /// Getter ///
+    ///// Getter /////
 
-        /// Setter ///
+    ///// Setter /////
         void setColor( const Color newColor ) noexcept ;
-        /// Setter ///
+    ///// Setter /////
 
     public:
-        /// Print ///
+    ///// Print /////
         void print() const noexcept override ;
-        /// Print ///
+    ///// Print /////
 
     public:
-        /// Debug Print ///
+    ///// Debug Print /////
         void debugPrint() const noexcept override ;
-        /// Debug Print ///
+    ///// Debug Print /////
 
 } ;

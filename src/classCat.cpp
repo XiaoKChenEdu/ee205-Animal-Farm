@@ -13,10 +13,10 @@
 #include "classCat.h"
 
 
-/////////////// Static Public Attributes ///////////////
+////////////////////////////// Static Public Attributes //////////////////////////////
 const string                classCat::SPECIES_NAME = "Felis Catus" ;
 const classWeight::t_weight classCat::MAX_WEIGHT   = 40            ;
-/////////////// Static Public Attributes ///////////////
+////////////////////////////// Static Public Attributes //////////////////////////////
 
 
 

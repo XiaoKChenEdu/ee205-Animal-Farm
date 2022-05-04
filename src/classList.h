@@ -20,35 +20,35 @@
 class classList {
 
     protected:
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
         classNode*   pHead = nullptr ;
         unsigned int count = 0       ;
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
 
     public:
-        /// Static Public Member Functions ///
+    ///// Static Public Member Functions /////
         static classNode* get_next( const classNode* pCurrentNode ) ;
-        /// Static Public Member Functions ///
+    ///// Static Public Member Functions /////
 
     public:
-        /// Public Member Functions ///
+    ///// Public Member Functions /////
         bool         empty     ()                   const noexcept ;
         unsigned int size      ()                   const noexcept ;
         bool         isIn      ( classNode* pNode ) const          ;
         bool         isSorted  ()                   const noexcept ;
         classNode*   get_first ()                   const noexcept ;
-        /// Public Member Functions ///
+    ///// Public Member Functions /////
 
     public:
-        /// Deletion ///
+    ///// Deletion /////
                 void       deleteAllNodes () noexcept     ;
         virtual classNode* pop_front      () noexcept = 0 ;
-        /// Deletion ///
+    ///// Deletion /////
 
     public:
-        /// Validation & Print ///
+    ///// Validation & Print /////
         virtual void print    () const noexcept = 0 ;
         virtual bool validate () const noexcept = 0 ;
-        /// Validation & Print ///
+    ///// Validation & Print /////
 
 } ;

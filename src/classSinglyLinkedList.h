@@ -21,22 +21,22 @@
 class classSinglyLinkedList : public classList {
 
     public:
-        /// Constructor ///
+    ///// Constructor /////
         classSinglyLinkedList();
-        /// Constructor ///
+    ///// Constructor /////
 
     public:
-        /// List Modifying ///
+    ///// List Modifying /////
         void       push_front   ( classNode* pNewNode      )                   ;
         void       insert_after ( classNode* pCurrentNode,
                                   classNode* pNewNode      )                   ;
         classNode* pop_front    ()                           noexcept override ;
-        /// List Modifying ///
+    ///// List Modifying /////
 
     public:
-        /// Validation & Print ///
+    ///// Validation & Print /////
         void print    () const noexcept override ;
         bool validate () const noexcept override ;
-        /// Validation & Print ///
+    ///// Validation & Print /////
 
 } ;

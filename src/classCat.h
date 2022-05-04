@@ -19,54 +19,54 @@
 class classCat : public classMammal {
 
     protected:
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
         string name       ;
         bool   isCatFixed = false ;
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
 
     public:
-        /// Static Public Attributes ///
+    ///// Static Public Attributes /////
         static const string                SPECIES_NAME ;
         static const classWeight::t_weight MAX_WEIGHT   ;
-        /// Static Public Attributes ///
+    ///// Static Public Attributes /////
 
     public:
-        /// Constructor ///
+    ///// Constructor /////
         classCat( const string                &NewName    ) ;
         classCat( const string                &NewName,
                   const Color                 newColor,
                   const bool                  newIsFixed,
                   const Gender                newGender,
                   const classWeight::t_weight newWeight   ) ;
-        /// Constructor ///
+    ///// Constructor /////
 
 
     public:
-        /// Getters ///
+    ///// Getters /////
         string getName() const noexcept ;
         bool   isFixed() const noexcept ;
-        /// Getters ///
+    ///// Getters /////
 
-        /// Setters ///
+    ///// Setters /////
         void setName ( const string &NewName )          ;
         void fixCat  ()                        noexcept ;
-        /// Setters ///
+    ///// Setters /////
 
     public:
-        /// Static Public Member Function ///
+    ///// Static Public Member Function /////
         static bool validateName( const string &NewName ) ;
-        /// Static Public Member Function ///
+    ///// Static Public Member Function /////
 
     public:
-        /// Validation & Print ///
+    ///// Validation & Print /////
         string speak    () const noexcept override ;
         void   print    () const noexcept override ;
         bool   validate () const noexcept override ;
-        /// Validation & Print ///
+    ///// Validation & Print /////
 
     public:
-        /// Debug Print ///
+    ///// Debug Print /////
         void debugPrint() const noexcept override ;
-        /// Debug Print ///
+    ///// Debug Print /////
 
 };

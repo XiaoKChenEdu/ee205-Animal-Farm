@@ -13,7 +13,7 @@
 #include "classWeight.h"
 
 
-/////////////// Public Attributes ///////////////
+////////////////////////////// Static Public Attributes //////////////////////////////
 const classWeight::t_weight classWeight::UNKNOWN_WEIGHT   = -1       ;
 const classWeight::t_weight classWeight::KILOS_IN_A_POUND = 0.453592 ;
 const classWeight::t_weight classWeight::SLUGS_IN_A_POUND = 0.031081 ;
@@ -21,7 +21,7 @@ const classWeight::t_weight classWeight::SLUGS_IN_A_POUND = 0.031081 ;
 const string classWeight::POUND_LABEL = "Pound" ;
 const string classWeight::KILO_LABEL  = "Kilo"  ;
 const string classWeight::SLUG_LABEL  = "Slug"  ;
-/////////////// Public Attributes ///////////////
+////////////////////////////// Static Public Attributes //////////////////////////////
 
 
 //////////////////////////////////////////////////////////////////////////////////////

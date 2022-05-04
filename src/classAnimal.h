@@ -22,20 +22,20 @@
 class classAnimal : public classNode {
 
     private:
-        /// Private Attributes ///
+    ///// Private Attributes /////
         string      species                         ;
         string      classification                  ;
         Gender      gender = Gender::UNKNOWN_GENDER ;
         classWeight weight                          ;
-        /// Private Attributes ///
+    ///// Private Attributes /////
 
     public:
-        /// Static Public Attributes ///
+    ///// Static Public Attributes /////
         static const string KINGDOM_NAME ;
-        /// Static Public Attributes ///
+    ///// Static Public Attributes /////
 
     public:
-        /// Constructor ///
+    ///// Constructor /////
         classAnimal( const classWeight::t_weight newMaxWeight,
                      const string                &NewClassification,
                      const string                &NewSpecies         ) ;
@@ -44,47 +44,47 @@ class classAnimal : public classNode {
                      const classWeight::t_weight newMaxWeight,
                      const string                &NewClassification,
                      const string                &NewSpecies         ) ;
-        /// Constructor ///
+    ///// Constructor /////
 
     public:
-        /// Getters ///
+    ///// Getters /////
         string                getKingdom        () const noexcept ;
         string                getClassification () const noexcept ;
         string                getSpecies        () const noexcept ;
         Gender                getGender         () const noexcept ;
         classWeight::t_weight getWeight         () const noexcept ;
-        /// Getters ///
+    ///// Getters /////
 
     public:
-        /// Setters ///
+    ///// Setters /////
         void setWeight( const classWeight::t_weight newWeight ) ;
-        /// Setters ///
+    ///// Setters /////
 
     protected:
-        /// Setters ///
+    ///// Setters /////
         void setGender( const Gender newGender ) ;
-        /// Setters ///
+    ///// Setters /////
 
     public:
-        /// Static Public Member Functions ///
+    ///// Static Public Member Functions /////
         static bool validateClassification ( const string &checkClassification ) noexcept ;
         static bool validateSpecies        ( const string &checkSpecies        ) noexcept ;
-        /// Static Public Member Functions ///
+    ///// Static Public Member Functions /////
 
     public:
-        /// Validation & Print ///
+    //// Validation & Print /////
         void print    () const noexcept override ;
         bool validate () const noexcept override ;
-        /// Validation & Print ///
+    ///// Validation & Print /////
 
     public:
-        /// Abstract Function ///
+    ///// Abstract Function /////
         virtual string speak() const noexcept = 0 ;
-        /// Abstract Function ///
+    ///// Abstract Function /////
 
     public:
-        /// Debug Print ///
+    ///// Debug Print /////
         void debugPrint () const noexcept override ;
-        /// Debug Print ///
+    ///// Debug Print /////
 
 } ;

@@ -18,35 +18,35 @@
 
 class classNode {
 
-    /// Friended Classes ///
+    ///// Friended Classes /////
     friend class classList             ;
     friend class classSinglyLinkedList ;
-    /// Friended Classes ///
+    ///// Friended Classes /////
 
     protected:
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
         classNode* pNext = nullptr ;
-        /// Protected Attributes ///
+    ///// Protected Attributes /////
 
     protected:
-        /// Protected Static Member Functions ///
+    ///// Protected Static Member Functions /////
         static bool compareByAddress ( const classNode* pNode1,
                                        const classNode* pNode2  ) ;
-        /// Protected Static Member Functions ///
+    ///// Protected Static Member Functions /////
 
     public:
-        /// Validation & Print ///
+    ///// Validation & Print /////
         virtual void print     () const          ;
         virtual bool validate  () const noexcept ;
-        /// Validation & Print ///
+    ///// Validation & Print /////
 
-        /// Operators ///
+    ///// Operators /////
         virtual bool operator> ( const classNode &RightSide ) ;
-        /// Operators ///
+    ///// Operators /////
 
     public:
-        /// Debug Print ///
+    ///// Debug Print /////
         virtual void debugPrint () const ;
-        /// Debug Print ///
+    ///// Debug Print /////
 
 } ;
