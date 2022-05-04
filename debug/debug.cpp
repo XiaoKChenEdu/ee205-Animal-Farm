@@ -11,21 +11,20 @@
 
 
 #include "debug.h"
-#include "config.h"
-#include "classSinglyLinkedList.h"
-#include "classCat.h"
+#include "../src/classSinglyLinkedList.h"
+#include "../src/classCat.h"
 
 
 //////////////////////////////////////////////////////////////////////////////////////
 ///////////////////// Debug for classList & classSinglyLinkedList ////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-/// Checking List Property ///
+///// Checking List Property /////
 void checkListProperty() {
 
     classSinglyLinkedList TestDB ;
 
-    /// checking if list is empty & list count & isSorted ///
+    ///// checking if list is empty & list count & isSorted /////
         cout << " @TestDB.empty()"      << endl ;
         cout << S4 << TestDB.empty()    << endl ;
         cout << " @TestDB.size()"       << endl ;
@@ -49,19 +48,19 @@ void checkListProperty() {
 
         cout << " @TestDB.isSorted()"   << endl ;
         cout << S4 << TestDB.isSorted() << endl ;
-    /// checking if list is empty & list count ///
+    ///// checking if list is empty & list count /////
 
-    /// checking if a node is in list ///
-        /// SUCCEED ///
+    ///// checking if a node is in list /////
+        ///// SUCCEED /////
         cout << " @TestDB.isIn( pTest0 )"   << endl ;
         cout << S4 << TestDB.isIn( pTest0 ) << endl ;
 
         classNode* pNotIn = new classCat( "NotIn" ) ;
         cout << " @TestDB.isIn( pNotin )"   << endl ;
         cout << S4 << TestDB.isIn( pNotIn ) << endl ;
-        /// SUCCEED ///
+        ///// SUCCEED /////
 
-        /// FAILS ///
+        ///// FAILS /////
         try {
 
             TestDB.isIn( nullptr ) ;
@@ -74,19 +73,19 @@ void checkListProperty() {
             cout << S4 << Error.what()           << endl ;
 
         }
-        /// FAILS ///
-    /// checking if a node is in list ///
+        ///// FAILS /////
+    ///// checking if a node is in list /////
 
 }
-/// Checking List Property ///
+///// Checking List Property /////
 
-/// Checking List Modifying ///
+///// Checking List Modifying /////
 void checkListModifying() {
 
     classSinglyLinkedList TestDB ;
 
-    /// push_front test ///
-        /// SUCCEED ///
+    ///// push_front test /////
+        ///// SUCCEED /////
         try {
 
             TestDB.push_front( new classCat( "Test0" ) ) ;
@@ -99,9 +98,9 @@ void checkListModifying() {
             cout << S4 << Error.what()                                   << endl ;
 
         }
-        /// SUCCEED ///
+        ///// SUCCEED /////
 
-        /// FAILS ///
+        ///// FAILS /////
         try {
 
             classNode* pTest0 = TestDB.get_first() ;
@@ -141,11 +140,11 @@ void checkListModifying() {
             cout << S4 << Error.what()                              << endl ;
 
         }
-        /// FAILS ///
-    /// push_front test ///
+        ///// FAILS /////
+    ///// push_front test /////
 
-    /// insert_after test ///
-        /// SUCCEED ///
+    ///// insert_after test /////
+        ///// SUCCEED /////
         try {
 
             classNode* pTest0 = TestDB.get_first() ;
@@ -159,9 +158,9 @@ void checkListModifying() {
             cout << S4 << Error.what()                                             << endl ;
 
         }
-        /// SUCCEED ///
+        ///// SUCCEED /////
 
-        /// FAILS ///
+        ///// FAILS /////
         try {
 
             TestDB.insert_after( nullptr, new classCat( "TestFail" ) ) ;
@@ -203,10 +202,10 @@ void checkListModifying() {
             cout << S4 << Error.what()                          << endl ;
 
         }
-        /// FAILS ///
-    /// insert_after test ///
+        ///// FAILS /////
+    ///// insert_after test /////
 }
-/// Checking List Modifying ///
+///// Checking List Modifying /////
 
 //////////////////////////////////////////////////////////////////////////////////////
 ///////////////////// Debug for classList & classSinglyLinkedList ////////////////////
@@ -218,7 +217,7 @@ void checkListModifying() {
 //////////////////////////////// Debug for classAnimal ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-/// Checking Constructor ///
+///// Checking Constructor /////
 void checkClassAnimalConstructor() {
 
     class classAnimalTest : public classAnimal {
@@ -236,21 +235,21 @@ void checkClassAnimalConstructor() {
 
     } ;
 
-    /// test for the first constructor ///
+    ///// test for the first constructor /////
         classAnimalTest Test0( 10.0, "TestClassification0", "TestSpecies0" ) ;
         cout << R"( @classAnimalTest Test0( 10.0, "TestClassification0", "TestSpecies0" ) ;)" << endl ;
         Test0.setWeight  ( 1.0 ) ;
         Test0.debugPrint ()      ;
-    /// test for the first constructor ///
+    ///// test for the first constructor /////
 
-    /// test for the second constructor ///
+    ///// test for the second constructor /////
         classAnimalTest Test1( Gender::MALE, 2.0, 20.0, "TestClassification1", "TestSpecies1" ) ;
         cout << R"( @classAnimalTest Test1( Gender::MALE, 2.0, 20.0, "TestClassification1", "TestSpecies1" ) ;)" << endl ;
         Test1.debugPrint() ;
-    /// test for the second constructor ///
+    ///// test for the second constructor /////
 
 }
-/// Checking Constructor ///
+///// Checking Constructor /////
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Debug for classAnimal ///////////////////////////////
@@ -262,23 +261,23 @@ void checkClassAnimalConstructor() {
 ///////////////////////////////// Debug for classCat /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-/// Checking Constructor ///
+///// Checking Constructor /////
 void checkClassCatConstructor() {
 
-    /// test for the first constructor ///
+    ///// test for the first constructor /////
         classCat TestCat0( "TestCat0" ) ;
         cout << R"( @classCat TestCat0( "TestCat0" ) ;)" << endl ;
         TestCat0.debugPrint() ;
-    /// test for the first constructor ///
+    ///// test for the first constructor /////
 
-    /// test for the second constructor ///
+    ///// test for the second constructor /////
         classCat TestCat1( "TestCat1", Color::BLACK, true, Gender::MALE, 10.0 ) ;
         cout << R"( @classCat TestCat1( "TestCat1", Color::BLACK, true, Gender::MALE, 10.0 ) ;)" << endl ;
         TestCat1.debugPrint() ;
-    /// test for the second constructor ///
+    ///// test for the second constructor /////
 
 }
-/// Checking Constructor ///
+///// Checking Constructor /////
 
 //////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// Debug for classCat /////////////////////////////////
@@ -290,63 +289,63 @@ void checkClassCatConstructor() {
 //////////////////////////////// Debug for classWeight ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-/// Checking Constructor ///
+///// Checking Constructor /////
 void checkClassWeightConstructor() {
 
-    /// test for the first constructor ///
+    ///// test for the first constructor /////
         classWeight testConstructor1;
         cout << " @classWeight testConstructor1;" << endl ;
         testConstructor1.debugPrint();
-    /// test for the first constructor ///
+    ///// test for the first constructor /////
 
-    /// test for the second constructor ///
+    ///// test for the second constructor /////
         classWeight testConstructor2( 10.0 ) ;
         cout << " @classWeight testConstructor2( 10.0 ) ;" << endl ;
         testConstructor2.debugPrint();
-    /// test for the second constructor ///
+    ///// test for the second constructor /////
 
-    /// test for the third constructor ///
+    ///// test for the third constructor /////
         classWeight testConstructor3( classWeight::KILO ) ;
         cout << " @classWeight testConstructor3( classWeight::KILO ) ;" << endl ;
         testConstructor3.debugPrint();
-    /// test for the third constructor ///
+    ///// test for the third constructor /////
 
-    /// test for the four constructor ///
+    ///// test for the four constructor /////
         classWeight testConstructor4( 10.0, classWeight::SLUG ) ;
         cout << " @classWeight testConstructor4( 10.0, classWeight::SLUG ) ;" << endl ;
         testConstructor4.debugPrint();
-    /// test for the four constructor ///
+    ///// test for the four constructor /////
 
-    /// test for the fifth constructor ///
+    ///// test for the fifth constructor /////
         classWeight testConstructor5( 10.0, 100.0 ) ;
         cout << " @classWeight testConstructor5( 10.0, 100.0 ) ;" << endl ;
         testConstructor5.debugPrint();
-    /// test for the fifth constructor ///
+    ///// test for the fifth constructor /////
 
-    /// test for the sixth constructor ///
+    ///// test for the sixth constructor /////
         classWeight testConstructor6( classWeight::KILO, 100.0 ) ;
         cout << " @classWeight testConstructor6( classWeight::KILO, 100.0 ) ;" << endl ;
         testConstructor6.debugPrint();
-    /// test for the sixth constructor ///
+    ///// test for the sixth constructor /////
 
-    /// test for the seventh constructor ///
+    ///// test for the seventh constructor /////
         classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;
         cout << " @classWeight testConstructor7( 10.0, classWeight::SLUG, 100.0 ) ;" << endl ;
         testConstructor7.debugPrint();
-    /// test for the seventh constructor ///
+    ///// test for the seventh constructor /////
 
 }
-/// Checking Constructor ///
+///// Checking Constructor /////
 
 
 
-/// Checking Getters ///
+///// Checking Getters /////
 void checkClassWeightGetters() {
 
     classWeight unknownWeight ;
     classWeight knownWeight( 10.0, classWeight::KILO, 100.0 ) ;
 
-    /// False and -1 ///
+    ///// False and -1 /////
     cout << " @unknownWeight.isWeightKnown()"       << endl ;
     cout << S4 << unknownWeight.isWeightKnown()     << endl ;
 
@@ -364,9 +363,9 @@ void checkClassWeightGetters() {
 
     cout << " @unknownWeight.getWeightUnit()"       << endl ;
     cout << S4 << unknownWeight.getWeightUnit()     << endl ;
-    /// False and -1 ///
+    ///// False and -1 /////
 
-    /// True ///
+    ///// True /////
     cout << " @knownWeight.isWeightKnown()"       << endl ;
     cout << S4 << knownWeight.isWeightKnown()     << endl ;
 
@@ -384,19 +383,19 @@ void checkClassWeightGetters() {
 
     cout << " @knownWeight.getWeightUnit()"       << endl ;
     cout << S4 << knownWeight.getWeightUnit()     << endl ;
-    /// True ///
+    ///// True /////
 
 }
-/// Checking Getters ///
+///// Checking Getters /////
 
 
 
-/// Checking Setters ///
+///// Checking Setters /////
 void checkClassWeightSetters() {
 
     classWeight defaultWeight;
 
-    /// Fails ///
+    ///// Fails /////
     try {
 
         defaultWeight.setWeight( -1 ) ;
@@ -422,9 +421,9 @@ void checkClassWeightSetters() {
         cout << S4 << Error.what()                                     << endl ;
 
     }
-    /// Fails ///
+    ///// Fails /////
 
-    /// Succeeds ///
+    ///// Succeeds /////
     try {
 
         defaultWeight.setWeight( 1 ) ;
@@ -450,14 +449,14 @@ void checkClassWeightSetters() {
         cout << S4 << Error.what()                                    << endl ;
 
     }
-    /// Succeeds ///
+    ///// Succeeds /////
 
 }
-/// Checking Setters ///
+///// Checking Setters /////
 
 
 
-/// Checking Equality Operator ///
+///// Checking Equality Operator /////
 void checkClassWeightEqualityOperator() {
 
     classWeight testWeight1True( 0.453592, classWeight::KILO  ) ;
@@ -478,11 +477,11 @@ void checkClassWeightEqualityOperator() {
     cout << S4 << checkEqualityFalse                                                 << endl ;
 
 }
-/// Checking Equality Operator ///
+///// Checking Equality Operator /////
 
 
 
-/// Checking LessThan Operator ///
+///// Checking LessThan Operator /////
 void checkClassWeightLessThanOperator() {
 
     classWeight testWeight1More( 1.0,      classWeight::KILO  ) ;
@@ -501,11 +500,11 @@ void checkClassWeightLessThanOperator() {
     cout << S4 << checkLessThanFalse                                              << endl ;
 
 }
-/// Checking LessThan Operator ///
+///// Checking LessThan Operator /////
 
 
 
-/// Checking AddTo Operator ///
+///// Checking AddTo Operator /////
 //Only works with the same unit.
 void checkClassWeightAddToOperator() {
 
@@ -540,7 +539,7 @@ void checkClassWeightAddToOperator() {
     }
 
 }
-/// Checking AddTo Operator ///
+///// Checking AddTo Operator /////
 
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// Debug for classWeight ///////////////////////////////

@@ -13,9 +13,7 @@
 #include "config.h"
 #include "classSinglyLinkedList.h"
 #include "classCat.h"
-#include "debug.h"
 
-#define DEBUG
 #define NL           cout << endl;
 
 
@@ -49,56 +47,6 @@ int main() {
     NL
 
     catDB.print          () ;
-
-    //////////////////////// Debug Starts Here ////////////////////////
-    #ifdef DEBUG
-    {
-        NL NL
-        cout << "---- Debugging Starts Here ----" << endl;
-        NL
-
-
-        /// debug for classList & classSinglyLinkedList ///
-            checkListProperty() ;
-            NL NL
-            checkListModifying () ;
-            NL NL
-        /// debug for classList & classSinglyLinkedList ///
-
-        /// debug for classAnimal ///
-            checkClassAnimalConstructor() ;
-            NL NL
-        /// debug for classAnimal ///
-
-        /// debug for classCat ///
-            checkClassCatConstructor() ;
-            NL NL
-        /// debug for classCat ///
-
-        /// debug for classWeight ///
-          checkClassWeightConstructor      () ;
-          NL NL
-          checkClassWeightGetters          () ;
-          NL NL
-          checkClassWeightSetters          () ;
-          NL NL
-          checkClassWeightEqualityOperator () ;
-          NL NL
-          checkClassWeightLessThanOperator () ;
-          NL NL
-          checkClassWeightAddToOperator    () ;
-        /// Debug for classWeight ///
-
-        NL
-        cout << "----- Debugging Ends Here -----" << endl;
-        NL NL
-
-    }
-    #endif
-    ///////////////////////// Debug Ends Here /////////////////////////
-
-    NL
-    cout << "----- Ending Program Animal Farm -----" << endl;
 
     return ( EXIT_SUCCESS ) ;
 

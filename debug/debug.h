@@ -13,27 +13,27 @@
 #pragma once
 
 
-#include "config.h"
+#include "../src/config.h"
 
 
-/// Debug for classList & classSinglyLinkedList ///
+///// Debug for classList & classSinglyLinkedList /////
 void checkListProperty                () ;
 void checkListModifying               () ;
-/// Debug for classList & classSinglyLinkedList ///
+///// Debug for classList & classSinglyLinkedList /////
 
-/// Debug for classAnimal ///
+///// Debug for classAnimal /////
 void checkClassAnimalConstructor      () ;
-/// Debug for classAnimal ///
+///// Debug for classAnimal /////
 
-/// debug for classCat ///
+///// debug for classCat /////
 void checkClassCatConstructor         () ;
-/// debug for classCat ///
+///// debug for classCat /////
 
-/// Debug for classWeight ///
+///// Debug for classWeight /////
 void checkClassWeightConstructor      () ;
 void checkClassWeightGetters          () ;
 void checkClassWeightSetters          () ;
 void checkClassWeightEqualityOperator () ;
 void checkClassWeightLessThanOperator () ;
 void checkClassWeightAddToOperator    () ;
-/// Debug for classWeight ///
+///// Debug for classWeight /////
