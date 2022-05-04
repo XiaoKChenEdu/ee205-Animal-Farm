@@ -16,9 +16,9 @@
 #include "config.h"
 
 
-enum class Gender { UNKNOWN_GENDER=0,
+enum class Gender { UNKNOWN_GENDER = 0,
                     MALE,
-                    FEMALE            } ;
+                    FEMALE              } ;
 
 
 inline ostream &operator<<( ostream &lhs_stream, const Gender &rhs_Gender ) {
